@@ -1,0 +1,2041 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="صفحة ثنائية اللغة تعرض الأسماء المقترحة لنظام تتبع نقل النفايات الإلكتروني تحت مظلة موان، مع إبراز المنطق البراندي وعلاقة كل اسم بطبيعة النظام.">
+  <title>مقترحات تسمية نظام التتبع الإلكتروني | موان</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --mwan-green: #009f45;
+      --mwan-blue: #002b3c;
+      --mwan-sky: #208eb3;
+      --mwan-lime: #7bbf5e;
+      --mwan-gold: #fec824;
+      --mwan-orange: #fa7f2d;
+      --bg: #f5f8f7;
+      --surface: #ffffff;
+      --surface-alt: #f0f5f4;
+      --line: rgba(0, 43, 60, 0.1);
+      --line-strong: rgba(0, 43, 60, 0.18);
+      --text: #0a2430;
+      --muted: #5a7480;
+      --shadow-soft: 0 18px 40px rgba(0, 43, 60, 0.06);
+      --radius-xl: 28px;
+      --radius-lg: 22px;
+      --radius-md: 16px;
+      --container: min(1200px, calc(100% - 32px));
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: "IBM Plex Sans Arabic", "Tahoma", sans-serif;
+      color: var(--text);
+      background:
+        linear-gradient(180deg, #f5f8f7 0%, #f5f8f7 100%);
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .page {
+      position: relative;
+      z-index: 1;
+    }
+
+    .container {
+      width: var(--container);
+      margin: 0 auto;
+    }
+
+    .lang-en {
+      display: none;
+      font-family: "Manrope", sans-serif;
+      direction: ltr;
+      text-align: left;
+    }
+
+    .lang-ar {
+      display: block;
+    }
+
+    body[data-lang="en"] {
+      direction: ltr;
+      font-family: "Manrope", sans-serif;
+    }
+
+    body[data-lang="en"] .lang-en {
+      display: block;
+    }
+
+    body[data-lang="en"] .lang-ar {
+      display: none;
+    }
+
+    body[data-lang="en"] .site-nav,
+    body[data-lang="en"] .hero-grid,
+    body[data-lang="en"] .story-grid,
+    body[data-lang="en"] .summary-grid,
+    body[data-lang="en"] .cards-grid,
+    body[data-lang="en"] .footer-grid {
+      direction: ltr;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(245, 248, 247, 0.96);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .topbar-inner {
+      width: var(--container);
+      margin: 0 auto;
+      padding: 14px 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .brand-lockup {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .brand-mark {
+      width: 46px;
+      height: 46px;
+      border-radius: 16px;
+      background: var(--mwan-blue);
+      display: grid;
+      place-items: center;
+      color: #fff;
+      font-weight: 800;
+      border: 3px solid var(--mwan-green);
+    }
+
+    .brand-copy {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+
+    .brand-copy strong {
+      font-size: 0.98rem;
+      letter-spacing: 0.04em;
+    }
+
+    .brand-copy span {
+      color: var(--muted);
+      font-size: 0.86rem;
+    }
+
+    .topbar-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .site-nav {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .site-nav a {
+      padding: 8px 10px;
+      border-radius: 999px;
+      transition: 180ms ease;
+    }
+
+    .site-nav a:hover {
+      background: rgba(0, 43, 60, 0.05);
+      color: var(--text);
+    }
+
+    .lang-toggle {
+      display: inline-flex;
+      padding: 4px;
+      border-radius: 999px;
+      background: #ffffff;
+      border: 1px solid var(--line);
+    }
+
+    .lang-toggle button {
+      border: 0;
+      background: transparent;
+      color: var(--muted);
+      padding: 10px 14px;
+      border-radius: 999px;
+      font: inherit;
+      cursor: pointer;
+      transition: 180ms ease;
+    }
+
+    .lang-toggle button.active {
+      background: var(--mwan-blue);
+      color: #fff;
+    }
+
+    .hero {
+      padding: 28px 0 34px;
+    }
+
+    .hero-shell {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow-soft);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .hero-shell::before {
+      content: "";
+      position: absolute;
+      inset: 0 0 auto 0;
+      height: 8px;
+      background: linear-gradient(90deg, var(--mwan-green) 0%, var(--mwan-sky) 58%, var(--mwan-gold) 100%);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 0;
+    }
+
+    .hero-copy {
+      padding: 56px 50px 48px;
+      position: relative;
+    }
+
+    .hero-copy::after {
+      content: "";
+      position: absolute;
+      inset: auto 50px 30px auto;
+      width: 84px;
+      height: 3px;
+      border-radius: 999px;
+      background: var(--mwan-green);
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--mwan-green);
+      font-weight: 700;
+      font-size: 0.86rem;
+      margin-bottom: 18px;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 34px;
+      height: 1px;
+      background: currentColor;
+    }
+
+    h1, h2, h3, h4, p {
+      margin: 0;
+    }
+
+    .hero-title {
+      font-size: clamp(2.4rem, 5vw, 4.8rem);
+      line-height: 1.02;
+      letter-spacing: -0.04em;
+      margin-bottom: 18px;
+      max-width: 10ch;
+    }
+
+    .hero-subtitle {
+      color: var(--muted);
+      font-size: 1.04rem;
+      line-height: 1.95;
+      max-width: 62ch;
+    }
+
+    .hero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 28px;
+    }
+
+    .tag {
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: var(--surface-alt);
+      border: 1px solid var(--line);
+      color: var(--text);
+      font-size: 0.9rem;
+    }
+
+    .hero-panel {
+      background: var(--mwan-blue);
+      color: #f4fbf8;
+      padding: 38px 34px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 100%;
+      position: relative;
+    }
+
+    .hero-panel::before {
+      content: "";
+      position: absolute;
+      inset: 0 0 auto 0;
+      height: 8px;
+      background: var(--mwan-green);
+    }
+
+    .panel-kicker {
+      color: rgba(255, 255, 255, 0.72);
+      font-size: 0.84rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      margin-bottom: 12px;
+    }
+
+    .score-stack {
+      display: grid;
+      gap: 14px;
+      margin-top: 20px;
+    }
+
+    .score-card {
+      padding: 18px;
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .score-card strong {
+      display: block;
+      color: #fff;
+      font-size: 1.6rem;
+      margin-bottom: 6px;
+    }
+
+    .score-card span {
+      color: rgba(255, 255, 255, 0.72);
+      font-size: 0.92rem;
+      line-height: 1.6;
+    }
+
+    .section {
+      padding: 34px 0;
+    }
+
+    .section-head {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 18px;
+      margin-bottom: 22px;
+    }
+
+    .section-title {
+      font-size: clamp(1.7rem, 3vw, 2.5rem);
+      line-height: 1.06;
+      max-width: 12ch;
+    }
+
+    .section-note {
+      max-width: 64ch;
+      color: var(--muted);
+      line-height: 1.9;
+      font-size: 0.98rem;
+    }
+
+    .story-grid,
+    .summary-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .story-card,
+    .summary-card,
+    .name-card,
+    .cta-box {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .story-card,
+    .summary-card {
+      padding: 24px;
+    }
+
+    .story-card h3,
+    .summary-card h3 {
+      font-size: 1.08rem;
+      margin-bottom: 10px;
+    }
+
+    .story-card p,
+    .summary-card p {
+      color: var(--muted);
+      line-height: 1.85;
+      font-size: 0.95rem;
+    }
+
+    .cards-toolbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 18px;
+      flex-wrap: wrap;
+    }
+
+    .filter-pills {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .filter-pills button {
+      border: 1px solid var(--line);
+      background: var(--surface);
+      padding: 11px 14px;
+      border-radius: 999px;
+      font: inherit;
+      color: var(--muted);
+      cursor: pointer;
+      transition: 180ms ease;
+    }
+
+    .filter-pills button.active {
+      background: var(--mwan-green);
+      color: #fff;
+      border-color: transparent;
+    }
+
+    .cards-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 18px;
+    }
+
+    .name-card {
+      padding: 26px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .name-card::before {
+      content: "";
+      position: absolute;
+      inset: 0 auto auto 0;
+      width: 100%;
+      height: 6px;
+      background: linear-gradient(90deg, var(--mwan-green) 0%, var(--mwan-sky) 72%, var(--mwan-gold) 100%);
+    }
+
+    .card-top {
+      display: flex;
+      align-items: start;
+      justify-content: space-between;
+      gap: 14px;
+      margin-bottom: 16px;
+    }
+
+    .name-lockup {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .arabic-name {
+      font-size: clamp(1.7rem, 3vw, 2.4rem);
+      line-height: 1;
+      font-weight: 700;
+      letter-spacing: -0.03em;
+    }
+
+    .english-name {
+      color: var(--muted);
+      font-family: "Manrope", sans-serif;
+      font-size: 0.92rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .status-chip {
+      padding: 10px 12px;
+      border-radius: 999px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .status-clean {
+      background: rgba(0, 159, 69, 0.1);
+      color: #007734;
+    }
+
+    .status-conflict {
+      background: rgba(250, 127, 45, 0.14);
+      color: #9f4500;
+    }
+
+    .card-blocks {
+      display: grid;
+      gap: 14px;
+    }
+
+    .info-block {
+      padding-top: 14px;
+      border-top: 1px solid var(--line);
+    }
+
+    .info-block:first-child {
+      padding-top: 0;
+      border-top: 0;
+    }
+
+    .info-block h4 {
+      font-size: 0.96rem;
+      margin-bottom: 6px;
+      color: var(--mwan-blue);
+    }
+
+    .info-block p {
+      color: var(--muted);
+      line-height: 1.85;
+      font-size: 0.94rem;
+    }
+
+    .mini-list {
+      display: grid;
+      gap: 8px;
+      margin-top: 8px;
+    }
+
+    .mini-list span {
+      display: block;
+      padding: 10px 12px;
+      border-radius: 14px;
+      background: var(--surface-alt);
+      color: var(--text);
+      font-size: 0.9rem;
+      line-height: 1.6;
+    }
+
+    .cta-box {
+      padding: 28px;
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 22px;
+      align-items: center;
+    }
+
+    .cta-box p {
+      color: var(--muted);
+      line-height: 1.9;
+      font-size: 0.98rem;
+      margin-top: 10px;
+    }
+
+    .cta-list {
+      display: grid;
+      gap: 10px;
+    }
+
+    .cta-list span {
+      display: block;
+      padding: 12px 14px;
+      border-radius: 16px;
+      background: rgba(0, 159, 69, 0.09);
+      color: #00692f;
+      font-weight: 600;
+      font-size: 0.94rem;
+    }
+
+    .footer {
+      padding: 24px 0 48px;
+    }
+
+    .footer-grid {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      padding: 18px 0 0;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    @media (max-width: 1080px) {
+      .hero-grid,
+      .cta-box,
+      .story-grid,
+      .summary-grid,
+      .cards-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-copy,
+      .hero-panel {
+        padding: 32px 24px;
+      }
+
+      .section-head {
+        align-items: start;
+        flex-direction: column;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .topbar-inner,
+      .site-nav,
+      .brand-lockup,
+      .cards-toolbar,
+      .footer-grid {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .topbar-actions {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .site-nav {
+        gap: 8px;
+      }
+
+      .hero-title {
+        max-width: none;
+      }
+
+      .hero-subtitle,
+      .section-note {
+        max-width: none;
+      }
+
+      .name-card,
+      .story-card,
+      .summary-card,
+      .cta-box {
+        padding: 20px;
+      }
+
+      .card-top {
+        flex-direction: column;
+        align-items: start;
+      }
+    }
+  </style>
+</head>
+<body data-lang="ar">
+  <div class="page">
+    <header class="topbar">
+      <div class="topbar-inner">
+        <div class="brand-lockup">
+          <div class="brand-mark">MW</div>
+          <div class="brand-copy">
+            <strong class="lang-ar">موان | مراجعة أسماء النظام</strong>
+            <strong class="lang-en">MWAN | System Naming Review</strong>
+            <span class="lang-ar">مقترحات اسم النظام الإلكتروني لتتبع نقل النفايات</span>
+            <span class="lang-en">Naming options for the digital waste transport tracking system</span>
+          </div>
+        </div>
+        <div class="topbar-actions">
+          <nav class="site-nav">
+            <a href="#overview" class="lang-ar">النظام</a>
+            <a href="#overview" class="lang-en">System</a>
+            <a href="#directions" class="lang-ar">منطق التسمية</a>
+            <a href="#directions" class="lang-en">Naming Logic</a>
+            <a href="#names" class="lang-ar">الأسماء المقترحة</a>
+            <a href="#names" class="lang-en">Name Set</a>
+          </nav>
+          <div class="lang-toggle" aria-label="Language switcher">
+            <button type="button" class="active" data-lang-switch="ar">العربية</button>
+            <button type="button" data-lang-switch="en">English</button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="container">
+          <div class="hero-shell">
+            <div class="hero-grid">
+              <div class="hero-copy">
+                <div class="eyebrow lang-ar">عرض مؤسسي للأسماء المقترحة</div>
+                <div class="eyebrow lang-en">Institutional naming presentation</div>
+
+                <h1 class="hero-title lang-ar">أسماء مقترحة لنظام التتبع الإلكتروني في منظومة إدارة النفايات</h1>
+                <h1 class="hero-title lang-en">Name options for the digital tracking system within the waste management ecosystem</h1>
+
+                <p class="hero-subtitle lang-ar">
+                  هذه الصفحة تعرض الأسماء المقترحة لنظام يوثّق ويربط ويتتبّع حركة نقل النفايات من المنشأ إلى الوجهة. صيغت الصفحة لتدعم المراجعة الداخلية والتنفيذيّة للأسماء من زاوية الوظيفة، البراند، وملاءمتها تحت مظلة موان.
+                </p>
+                <p class="hero-subtitle lang-en">
+                  This page presents naming options for a system that documents, connects, and tracks waste transport from origin to destination. It is designed to support internal and executive review from a brand, function, and MWAN fit perspective.
+                </p>
+
+                <div class="hero-tags">
+                  <span class="tag lang-ar">الشفافية</span>
+                  <span class="tag lang-ar">الامتثال</span>
+                  <span class="tag lang-ar">التحول الرقمي</span>
+                  <span class="tag lang-ar">تتبع الرحلة</span>
+
+                  <span class="tag lang-en">Transparency</span>
+                  <span class="tag lang-en">Compliance</span>
+                  <span class="tag lang-en">Digital transformation</span>
+                  <span class="tag lang-en">Journey traceability</span>
+                </div>
+              </div>
+
+              <aside class="hero-panel">
+                <div>
+                  <div class="panel-kicker lang-ar">نقطة الانطلاق</div>
+                  <div class="panel-kicker lang-en">Starting point</div>
+                  <h2 class="lang-ar">النظام ليس مجرد وثيقة نقل. هو منصة رقابية تشغيلية تمنح كل رحلة أثرًا رقميًا واضحًا.</h2>
+                  <h2 class="lang-en">This is not just a transport document. It is an operational oversight platform that gives every trip a visible digital trail.</h2>
+                </div>
+
+                <div class="score-stack">
+                  <div class="score-card">
+                    <strong>16</strong>
+                    <span class="lang-ar">اسمًا في القائمة الحالية بين أسماء حركية، رقابية، وإرشادية</span>
+                    <span class="lang-en">names in the current shortlist across movement, oversight, and guidance directions</span>
+                  </div>
+                  <div class="score-card">
+                    <strong>2</strong>
+                    <span class="lang-ar">لغتان في صفحة واحدة لتسهيل العرض والمراجعة الداخلية</span>
+                    <span class="lang-en">languages in one page for internal review and presentation</span>
+                  </div>
+                  <div class="score-card">
+                    <strong>1</strong>
+                    <span class="lang-ar">هدف رئيسي: اسم واضح، راسخ، ويصلح أن يعرف به النظام وطنيًا</span>
+                    <span class="lang-en">core goal: a clear and durable name that can stand nationally as the system name</span>
+                  </div>
+                </div>
+              </aside>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="overview">
+        <div class="container">
+          <div class="section-head">
+            <div>
+              <h2 class="section-title lang-ar">فهم النظام قبل تسمية النظام</h2>
+              <h2 class="section-title lang-en">Understanding the system before naming it</h2>
+            </div>
+            <p class="section-note lang-ar">
+              الاسم الأقوى هنا ليس الاسم الأجمل فقط. الاسم الأقوى هو الاسم الذي يمكنه أن يعيش داخل بيئة موان، ويعكس دور النظام في التوثيق والربط والتتبع والتحقق، ويحتمل الاستخدام اليومي في الواجهات الرقمية والتقارير والخطاب التنفيذي.
+            </p>
+            <p class="section-note lang-en">
+              The strongest name is not simply the nicest sounding one. It is the one that can live inside the MWAN ecosystem, reflect documentation, linkage, tracking, and verification, and still hold up in daily use across interfaces, reports, and executive communication.
+            </p>
+          </div>
+
+          <div class="story-grid">
+            <article class="story-card">
+              <h3 class="lang-ar">ما الذي يفعله النظام</h3>
+              <h3 class="lang-en">What the system does</h3>
+              <p class="lang-ar">يوثّق حركة نقل النفايات إلكترونيًا، يربط أطراف الرحلة، يراقب المسار، ويمنح الجهة التنظيمية صورة أوضح عن حالة الحمولة والالتزام النظامي من البداية للنهاية.</p>
+              <p class="lang-en">It documents waste transport digitally, links the parties involved in the journey, monitors the route, and gives the regulator a clearer view of shipment status and compliance from start to finish.</p>
+            </article>
+            <article class="story-card">
+              <h3 class="lang-ar">ما الذي يجب أن يعكسه الاسم</h3>
+              <h3 class="lang-en">What the name needs to express</h3>
+              <p class="lang-ar">الحركة وحدها لا تكفي. الاسم الأفضل يلمّح أيضًا إلى الأثر، المتابعة، الانكشاف، التوثيق، أو معرفة ما جرى في الرحلة وليس مجرد وقوع الرحلة نفسها.</p>
+              <p class="lang-en">Movement alone is not enough. The best name should also hint at trace, follow-up, visibility, documentation, or knowing what happened during the trip, not just the trip itself.</p>
+            </article>
+            <article class="story-card">
+              <h3 class="lang-ar">ما الذي تقوله هوية موان</h3>
+              <h3 class="lang-en">What MWAN’s identity requires</h3>
+              <p class="lang-ar">الدليل يفضّل أسماء واضحة، موثوقة، قابلة للتفعيل، وتنسجم مع المهنية والابتكار والحوكمة. لذلك لا يكفي أن يكون الاسم لغويًا جميلًا. يجب أن يكون مؤسسيًا وقابلًا للترسيخ.</p>
+              <p class="lang-en">The brand guide favors names that are clear, trustworthy, activatable, and consistent with professionalism, innovation, and governance. A name cannot rely on linguistic beauty alone. It has to work institutionally.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="directions">
+        <div class="container">
+          <div class="section-head">
+            <div>
+              <h2 class="section-title lang-ar">اتجاهات التسمية المطروحة</h2>
+              <h2 class="section-title lang-en">Active naming directions</h2>
+            </div>
+            <p class="section-note lang-ar">
+              الأسماء الحالية لا تأتي من حقل واحد. بعضها ينتمي إلى حقل الحركة، وبعضها إلى حقل الرقابة، وبعضها إلى حقل الدلالة أو الطريق. هذا التنوع مفيد، لأنه يكشف أي معنى يخدم النظام أفضل من غيره.
+            </p>
+            <p class="section-note lang-en">
+              The current names do not come from one semantic lane. Some lean into movement, some into oversight, and others into guidance or route language. That spread is useful because it reveals which meaning serves the system best.
+            </p>
+          </div>
+
+          <div class="summary-grid">
+            <article class="summary-card">
+              <h3 class="lang-ar">أسماء الحركة</h3>
+              <h3 class="lang-en">Movement names</h3>
+              <p class="lang-ar">مثل ساري، سرى، مسرى، سالك، مسير، مسار، مسلك، سبيل، عابر. هذه الأسماء تلتقط فكرة الرحلة والانتقال، لكنها تختلف في قدرتها على التعبير عن الرقابة والامتثال.</p>
+              <p class="lang-en">Names like Sari, Sura, Masra, Salik, Maseer, Masar, Maslak, Sabeel, and Aaber capture travel and movement, but they vary in how well they express oversight and compliance.</p>
+            </article>
+            <article class="summary-card">
+              <h3 class="lang-ar">أسماء الرقابة</h3>
+              <h3 class="lang-en">Oversight names</h3>
+              <p class="lang-ar">مثل تعقّب، راصد، مرصد، رصد. هذه الأسماء أقرب لوظيفة النظام الفعلية، لأنها تتصل بالمتابعة، الرؤية، التحقق، ومعرفة ما حدث خلال الرحلة.</p>
+              <p class="lang-en">Names like Taaqqub, Rasid, Marsad, and Rasd are closer to what the system actually does because they connect to follow-up, visibility, verification, and knowing what happened during the trip.</p>
+            </article>
+            <article class="summary-card">
+              <h3 class="lang-ar">أسماء الإرشاد والغاية</h3>
+              <h3 class="lang-en">Guidance and purpose names</h3>
+              <p class="lang-ar">مثل دليل، مستدام، تخلّص. هذه الأسماء تلمس جوانب صحيحة في المنظومة، لكنها لا تعكس دائمًا المنصة التشغيلية كاملة بالوضوح نفسه.</p>
+              <p class="lang-en">Names like Daleel, Mostadam, and Takhallus touch valid parts of the ecosystem, but they do not always represent the full operational platform with the same level of clarity.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="names">
+        <div class="container">
+          <div class="section-head">
+            <div>
+              <h2 class="section-title lang-ar">الأسماء المقترحة</h2>
+              <h2 class="section-title lang-en">Proposed names</h2>
+            </div>
+            <p class="section-note lang-ar">
+              كل بطاقة أدناه تجمع أربعة عناصر في مكان واحد: مستوى التعارض الظاهر داخل السعودية، المنطق الذي يربط الاسم بالنظام، الأمثلة العملية على تداوله، ثم مدى اتساقه مع التوجه العام لهوية موان.
+            </p>
+            <p class="section-note lang-en">
+              Each card below brings four things together: visible conflict level inside Saudi Arabia, the logic that connects the name to the system, practical usage language, and how well it fits the broader MWAN identity.
+            </p>
+          </div>
+
+          <div class="cards-toolbar">
+            <div class="filter-pills">
+              <button type="button" class="active" data-filter="all">
+                <span class="lang-ar">الكل</span>
+                <span class="lang-en">All</span>
+              </button>
+              <button type="button" data-filter="clean">
+                <span class="lang-ar">أقل تعارضًا</span>
+                <span class="lang-en">Lower conflict</span>
+              </button>
+              <button type="button" data-filter="movement">
+                <span class="lang-ar">حركة ومسار</span>
+                <span class="lang-en">Movement</span>
+              </button>
+              <button type="button" data-filter="oversight">
+                <span class="lang-ar">رقابة وتتبع</span>
+                <span class="lang-en">Oversight</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="cards-grid">
+            <article class="name-card" data-group="movement conflict">
+              <div class="card-top">
+                <div class="name-lockup">
+                  <div class="arabic-name">ساري</div>
+                  <div class="english-name">Sari</div>
+                </div>
+                <div class="status-chip status-conflict">
+                  <span class="lang-ar">تعارض ظاهر</span>
+                  <span class="lang-en">Visible conflict</span>
+                </div>
+              </div>
+              <div class="card-blocks">
+                <div class="info-block">
+                  <h4 class="lang-ar">حالة التعارض في السعودية</h4>
+                  <h4 class="lang-en">Conflict status in Saudi Arabia</h4>
+                  <p class="lang-ar">يوجد له تعارض أو استخدام قائم داخل السعودية، سواء على مستوى جهات معروفة أو كيانات أو استخدامات اسمية ظاهرة. وهذا لا يعني بالضرورة استحالة استخدامه قانونيًا، لكنه يعني أن الاسم ليس نظيفًا بالكامل من ناحية التفرّد.</p>
+                  <p class="lang-en">There appears to be an existing use or conflict within Saudi Arabia, whether at the level of known entities, organizations, or visible naming usage. That does not necessarily mean the name cannot be used legally, but it does mean the name is not entirely clean in terms of distinctiveness.</p>
+                </div>
+                <div class="info-block">
+                  <h4 class="lang-ar">علاقته بالنظام</h4>
+                  <h4 class="lang-en">Relevance to the system</h4>
+                  <p class="lang-ar">اسم ساري يرتبط ذهنيًا بفكرة السريان والامتداد والانتقال. وهذه العلاقة منطقية مع نظام يتعامل مع حركة الشاحنات، وانتقال الحمولة، وسريان الرحلة من نقطة إلى نقطة.</p>
+                  <p class="lang-en">The name Sari is mentally associated with flow, continuity, and movement. That makes sense for a system that deals with truck movement, cargo transfer, and the progression of a shipment from one point to another.</p>
+                </div>
+                <div class="info-block">
+                  <h4 class="lang-ar">كيف يعكس مفهوم النظام</h4>
+                  <h4 class="lang-en">How it reflects the system concept</h4>
+                  <p class="lang-ar">يعكس النظام من زاوية الحركة المستمرة، والانتقال غير المنقطع، والمسار الجاري أو الفعّال، والعملية الممتدة على خط زمني ومكاني. لكنه لا يعكس بوضوح كافٍ عناصر التحقق، والتتبع، والامتثال، والرصد الرقابي. أي أنه يعبّر عن الحركة أكثر من تعبيره عن الإحاطة بالحركة.</p>
+                  <p class="lang-en">It reflects the system in terms of ongoing movement, uninterrupted transfer, an active path or route, and a process extending across time and place. What it does not clearly convey is verification, tracking, compliance, and regulatory monitoring. In other words, it expresses movement more than it expresses oversight of movement.</p>
+                </div>
+                <div class="info-block">
+                  <h4 class="lang-ar">فلسفة الاسم</h4>
+                  <h4 class="lang-en">Name philosophy</h4>
+                  <p class="lang-ar">الاسم يقوم على فكرة الشيء الساري، أي الجاري أو الممتد أو النافذ في مساره. وهذه فلسفة لغوية مناسبة لأن النظام لا يصف نقطة ثابتة، بل يتعامل مع رحلة متحركة.</p>
+                  <p class="lang-en">The name is based on the idea of something flowing or moving through its course. That is a fitting linguistic concept because the system does not describe a fixed point. It deals with a moving journey.</p>
+                </div>
+                <div class="info-block">
+                  <h4 class="lang-ar">الجذر والبعد اللغوي والتاريخي</h4>
+                  <h4 class="lang-en">Linguistic root and historical depth</h4>
+                  <p class="lang-ar">الجذر اللغوي له صلة بالسريان والامتداد والحركة الجارية. وهو جذر عربي واضح ومألوف، والاسم نفسه ليس غريبًا على المتلقي السعودي. لكن إحدى مشكلاته أنه قريب من أسماء الأعلام الشخصية، وهذا قد يخفف من قوته كنظام مؤسسي ما لم يُدعَم بصياغة بصرية وهوية قوية.</p>
+                  <p class="lang-en">Its root is tied to flow, continuity, and moving motion. It is a clear and familiar Arabic root, and the name itself does not feel strange to a Saudi audience. One issue, though, is that it feels close to a personal name, which may reduce its weight as an institutional system unless it is supported by a very strong visual identity.</p>
+                </div>
+                <div class="info-block">
+                  <h4 class="lang-ar">أمثلة استعمال حيّة</h4>
+                  <h4 class="lang-en">Real usage examples</h4>
+                  <div class="mini-list">
+                    <span class="lang-ar">سجّل الرحلة في ساري.</span>
+                    <span class="lang-ar">يمكن متابعة حالة الشحنة عبر ساري.</span>
+                    <span class="lang-ar">يربط ساري بين المنشأ والوجهة والناقل.</span>
+                    <span class="lang-ar">يساعد ساري في تحسين شفافية النقل.</span>
+                    <span class="lang-en">Register the trip in Sari.</span>
+                    <span class="lang-en">The shipment status can be tracked through Sari.</span>
+                    <span class="lang-en">Sari connects the origin, destination, and carrier.</span>
+                    <span class="lang-en">Sari helps improve transport transparency.</span>
+                  </div>
+                </div>
+                <div class="info-block">
+                  <h4 class="lang-ar">مدى اتساقه مع دليل موان</h4>
+                  <h4 class="lang-en">How well it aligns with the MWAN brand guide</h4>
+                  <p class="lang-ar">يتسق مع الدليل في جوانب السهولة، والقرب من المستخدم، والطابع الحديث، وملاءمة الاستخدام الرقمي. ويتسق بدرجة أقل في جوانب الحزم، والموثوقية المؤسسية العالية، والصلة الواضحة بالامتثال، والتميّز القوي في الحوكمة.</p>
+                  <p class="lang-en">It aligns with the guide in terms of ease, user accessibility, a modern tone, and suitability for digital use. It aligns less strongly in terms of authority, high institutional trust, clear compliance relevance, and strong governance distinction.</p>
+                </div>
+                <div class="info-block">
+                  <h4 class="lang-ar">ملاحظات إضافية</h4>
+                  <h4 class="lang-en">Additional notes</h4>
+                  <p class="lang-ar">قوة الاسم الأساسية في خفته وسهولته. وضعفه الأساسي في وجود تعارض أو استعمال قائم، وعدم وضوح دلالته الرقابية أو التوثيقية بما يكفي.</p>
+                  <p class="lang-en">The main strength of the name is that it feels light and easy. Its main weaknesses are an existing conflict or prior use and limited clarity around regulatory or documentation functions.</p>
+                </div>
+              </div>
+            </article>
+
+            <article class="name-card" data-group="oversight clean">
+              <div class="card-top">
+                <div class="name-lockup">
+                  <div class="arabic-name">تعقّب</div>
+                  <div class="english-name">Taaqqub</div>
+                </div>
+                <div class="status-chip status-clean">
+                  <span class="lang-ar">لا يظهر تعارض بارز</span>
+                  <span class="lang-en">No major conflict found</span>
+                </div>
+              </div>
+              <div class="card-blocks">
+                <div class="info-block">
+                  <h4 class="lang-ar">حالة التعارض في السعودية</h4>
+                  <h4 class="lang-en">Conflict status in Saudi Arabia</h4>
+                  <p class="lang-ar">لا يظهر له تعارض بارز أو قوي ضمن الاستخدام الظاهر الذي جرى التحقق منه. وهذا يمنحه ميزة مهمة من زاوية الحوكمة والتميّز.</p>
+                  <p class="lang-en">No strong or obvious conflict has appeared in the visible usage reviewed so far. That gives it an important advantage from a governance and differentiation standpoint.</p>
+                </div>
+                <div class="info-block">
+                  <h4 class="lang-ar">علاقته بالنظام</h4>
+                  <h4 class="lang-en">Relevance to the system</h4>
+                  <p class="lang-ar">علاقته بالنظام مباشرة وقوية جدًا. النظام في جوهره لا يكتفي بعرض معلومات، بل يقوم بتتبع الشحنة، ومعرفة أين بدأت، وأين تحركت، وأين وصلت، وما حالتها النظامية. وهذا بالضبط ما يعبّر عنه اسم تعقّب.</p>
+                  <p class="lang-en">Its connection to the system is direct and very strong. The system is not just there to display information. It tracks the shipment, shows where it started, how it moved, where it ended up, and what its regulatory status is. That is exactly what Taaqqub expresses.</p>
+                </div>
+                <div class="info-block">
+                  <h4 class="lang-ar">كيف يعكس مفهوم النظام</h4>
+                  <h4 class="lang-en">How it reflects the system concept</h4>
+                  <p class="lang-ar">يعكس النظام من أكثر من زاوية: تتبع حركة الشاحنات، وتتبع مسار الحمولة، وتتبع الرحلة من البداية للنهاية، وتتبع المخالفة أو الانحراف، وتتبع الامتثال، وتتبع الأثر الرقمي للرحلة. وهذا يجعل الاسم قريبًا جدًا من جوهر النظام الفعلي، لا من مظاهره فقط.</p>
+                  <p class="lang-en">It reflects the system from several angles: tracking truck movement, tracking shipment routes, tracking the trip from beginning to end, tracking violations or deviations, tracking compliance, and tracking the digital trail of the trip. That makes the name very close to the actual core of the system, not just to its surface features.</p>
+                </div>
+                <div class="info-block">
+                  <h4 class="lang-ar">فلسفة الاسم</h4>
+                  <h4 class="lang-en">Name philosophy</h4>
+                  <p class="lang-ar">فلسفة الاسم قائمة على المضي خلف الشيء لمعرفة أثره ومآله. وهذه فلسفة دقيقة جدًا للنظام، لأن المنظومة ليست مجرد أرشيف أو دليل، بل وسيلة للإحاطة بما حدث خلال الرحلة.</p>
+                  <p class="lang-en">The philosophy behind the name is following something in order to know its trace and its outcome. That is highly accurate for this system, because the platform is not just an archive or a reference point. It is a way to fully understand what happened during the shipment journey.</p>
+                </div>
+                <div class="info-block">
+                  <h4 class="lang-ar">الجذر والبعد اللغوي والتاريخي</h4>
+                  <h4 class="lang-en">Linguistic root and historical depth</h4>
+                  <p class="lang-ar">من الجذر ع ق ب، وهو جذر غني ومعانيه تدور حول ما يأتي بعد الشيء، والتتابع، والتعاقب، وتتبع الأثر، ومعرفة المآل. وهذا الجذر له بعد لغوي قوي جدًا، ويعطي الاسم وزنًا عربيًا أصيلًا ونبرة جدّية. وفيه بعد تنظيمي واضح أكثر من كونه بعدًا شعريًا أو مجازيًا.</p>
+                  <p class="lang-en">It comes from the Arabic root ع ق ب, a rich root associated with what comes after something, sequence, succession, following a trace, and knowing the outcome. This gives the name strong linguistic depth, an authentic Arabic weight, and a serious tone. It feels more regulatory and structured than poetic or symbolic.</p>
+                </div>
+                <div class="info-block">
+                  <h4 class="lang-ar">أمثلة استعمال حيّة</h4>
+                  <h4 class="lang-en">Real usage examples</h4>
+                  <div class="mini-list">
+                    <span class="lang-ar">تم تسجيل الرحلة في تعقّب.</span>
+                    <span class="lang-ar">يعرض تعقّب مسار الشحنة بالكامل.</span>
+                    <span class="lang-ar">يسهم تعقّب في رفع الامتثال والشفافية.</span>
+                    <span class="lang-ar">يمكن للجهات التنظيمية متابعة حالة النقل عبر تعقّب.</span>
+                    <span class="lang-ar">يربط تعقّب بين المنتج والناقل والمستلم.</span>
+                    <span class="lang-en">The trip has been logged in Taaqqub.</span>
+                    <span class="lang-en">Taaqqub displays the full shipment route.</span>
+                    <span class="lang-en">Taaqqub helps strengthen compliance and transparency.</span>
+                    <span class="lang-en">Regulators can monitor transport status through Taaqqub.</span>
+                    <span class="lang-en">Taaqqub connects the generator, the carrier, and the receiver.</span>
+                  </div>
+                </div>
+                <div class="info-block">
+                  <h4 class="lang-ar">مدى اتساقه مع دليل موان</h4>
+                  <h4 class="lang-en">How well it aligns with the MWAN brand guide</h4>
+                  <p class="lang-ar">يتسق مع الدليل بدرجة عالية جدًا لأنه يعكس الشفافية، والامتثال، والكفاءة، وهو مناسب جدًا للتحول الرقمي. كما أنه يتناغم مع صوت موان الحازم والموثوق، ويملك وضوحًا عاليًا، ويصلح للاستخدام كنظام أو منتج رقمي ضمن بنية العلامات المؤيدة أو الهويات الفرعية.</p>
+                  <p class="lang-en">It aligns very strongly because it reflects transparency, compliance, efficiency, and digital transformation. It also fits MWAN’s brand voice as firm, trustworthy, and clear, and it is suitable for use as a digital system or product under a sub-brand or endorsed-brand structure.</p>
+                </div>
+                <div class="info-block">
+                  <h4 class="lang-ar">ملاحظات إضافية</h4>
+                  <h4 class="lang-en">Additional notes</h4>
+                  <p class="lang-ar">من مميزات الاسم أنه دقيق، وغير رخو، وقوي مؤسسيًا، وقابل للتداول. ومن ملاحظاته فقط أنه مباشر نسبيًا، وأقل شاعرية أو مرونة براندية من بعض الأسماء الأخرى، لكن هذا ليس عيبًا إذا كان المطلوب اسمًا يصف الفعل الحقيقي للنظام.</p>
+                  <p class="lang-en">The strengths of the name are precision, firmness, institutional weight, and ease of use. Its only real limitation is that it is somewhat direct and less poetic or brand-flexible than some other options. That is not a drawback if the goal is a name that clearly describes the system’s real function.</p>
+                </div>
+              </div>
+            </article>
+
+            <article class="name-card" data-group="movement clean">
+              <div class="card-top">
+                <div class="name-lockup">
+                  <div class="arabic-name">سَرى</div>
+                  <div class="english-name">Sura</div>
+                </div>
+                <div class="status-chip status-clean">
+                  <span class="lang-ar">لا يظهر تعارض بارز</span>
+                  <span class="lang-en">No major conflict found</span>
+                </div>
+              </div>
+              <div class="card-blocks">
+                <div class="info-block">
+                  <h4 class="lang-ar">حالة التعارض في السعودية</h4>
+                  <h4 class="lang-en">Conflict status in Saudi Arabia</h4>
+                  <p class="lang-ar">لا يظهر تعارض بارز في الاستخدام الظاهر الذي تم الرجوع إليه.</p>
+                  <p class="lang-en">No major conflict appears in the visible usage reviewed so far.</p>
+                </div>
+                <div class="info-block">
+                  <h4 class="lang-ar">علاقته بالنظام</h4>
+                  <h4 class="lang-en">Relevance to the system</h4>
+                  <p class="lang-ar">يرتبط بالنظام من زاوية الحركة والانتقال والرحلة. وهو يعكس الطابع الديناميكي لحركة النقل، أكثر من كونه يعكس الجانب التوثيقي أو الرقابي مباشرة.</p>
+                  <p class="lang-en">It connects to the system through the idea of movement, travel, and transition. It reflects the dynamic nature of transport more than it reflects documentation or regulatory oversight directly.</p>
+                </div>
+                <div class="info-block">
+                  <h4 class="lang-ar">كيف يعكس مفهوم النظام</h4>
+                  <h4 class="lang-en">How it reflects the system concept</h4>
+                  <p class="lang-ar">يعكس الانتقال، والرحلة، والامتداد في المسار، والحركة الجارية. وهو مناسب جدًا إذا أردت اسمًا يوحي بأن هناك شيئًا يسير أو يمضي على خط معلوم ويمكن الإمساك به ضمن النظام. لكنه أقل مباشرة من تعقّب في تمثيل الرقابة، والرصد، والامتثال، والتوثيق.</p>
+                  <p class="lang-en">It reflects movement, a journey, extension along a route, and ongoing motion. It works well if you want a name that suggests something is moving along a known line and can be followed within the system. It is less direct than Taaqqub in expressing oversight, monitoring, compliance, and documentation.</p>
+                </div>
+                <div class="info-block">
+                  <h4 class="lang-ar">فلسفة الاسم</h4>
+                  <h4 class="lang-en">Name philosophy</h4>
+                  <p class="lang-ar">فلسفة الاسم قائمة على السير والانتقال، أي على رحلة تمتد عبر خط واضح. وهذا مناسب جدًا لنظام يراقب التنقل بين المصدر والوجهة.</p>
+                  <p class="lang-en">The philosophy of the name is built around motion and travel, a journey extending along a clear route. That suits a system that monitors movement between origin and destination.</p>
+                </div>
+                <div class="info-block">
+                  <h4 class="lang-ar">الجذر والبعد اللغوي والتاريخي</h4>
+                  <h4 class="lang-en">Linguistic root and historical depth</h4>
+                  <p class="lang-ar">سرى لفظ عربي أصيل جدًا، وله حضور قوي في العربية القديمة والكلاسيكية. يمتاز بأنه خفيف، ورشيق، وموجز، وسهل الحفظ، وذو نبرة رفيعة. وفي الوقت نفسه لا يبدو مبتذلًا أو مستهلكًا.</p>
+                  <p class="lang-en">Sura is a deeply authentic Arabic word with a strong presence in classical Arabic. It stands out because it is light, elegant, concise, easy to remember, and refined in tone. At the same time, it does not feel overused or generic.</p>
+                </div>
+                <div class="info-block">
+                  <h4 class="lang-ar">أمثلة استعمال حيّة</h4>
+                  <h4 class="lang-en">Real usage examples</h4>
+                  <div class="mini-list">
+                    <span class="lang-ar">تابع حركة النقل عبر سرى.</span>
+                    <span class="lang-ar">تم توثيق الرحلة في سرى.</span>
+                    <span class="lang-ar">يربط سرى مراحل الشحنة من المصدر إلى الوجهة.</span>
+                    <span class="lang-ar">يتيح سرى رؤية أوضح لحركة النفايات.</span>
+                    <span class="lang-en">Track the shipment through Sura.</span>
+                    <span class="lang-en">The trip has been documented in Sura.</span>
+                    <span class="lang-en">Sura connects the shipment stages from source to destination.</span>
+                    <span class="lang-en">Sura provides clearer visibility into waste movement.</span>
+                  </div>
+                </div>
+                <div class="info-block">
+                  <h4 class="lang-ar">مدى اتساقه مع دليل موان</h4>
+                  <h4 class="lang-en">How well it aligns with the MWAN brand guide</h4>
+                  <p class="lang-ar">يتسق مع الدليل في جوانب أن الاسم قصير وسهل، وحديث برانديًا، ومناسب للتطبيق الرقمي، ومنسجم مع طابع موان التقدّمي، ويمكن تفعيله بسهولة بصريًا تحت هوية موان. ويتسق بدرجة أقل مع الوضوح الفوري للوظيفة، والحزم الرقابي، والرسائل المباشرة المرتبطة بالامتثال.</p>
+                  <p class="lang-en">It aligns with the guide in that it is short, easy, brand-friendly, suitable for digital use, in line with MWAN’s forward-looking personality, and visually easy to activate under the MWAN identity. It aligns less strongly in terms of immediate functional clarity, regulatory authority, and direct compliance messaging.</p>
+                </div>
+                <div class="info-block">
+                  <h4 class="lang-ar">ملاحظات إضافية</h4>
+                  <h4 class="lang-en">Additional notes</h4>
+                  <p class="lang-ar">ميزة الاسم الأساسية جودة براندية عالية، ونظافة صوتية وبصرية، وأصالة لغوية. وملاحظته الأساسية أنه يحتاج ربطًا مؤسسيًا واضحًا في البداية حتى يفهمه الجمهور كاسم نظام تتبع.</p>
+                  <p class="lang-en">Its strengths are strong brand quality, a clean sound and visual feel, and authentic linguistic roots. Its main limitation is that it may need a clear institutional framing at first for people to understand it as a tracking system.</p>
+                </div>
+              </div>
+            </article>
+
+            <article class="name-card" data-group="oversight conflict">
+              <div class="card-top">
+                <div class="name-lockup">
+                  <div class="arabic-name">راصد</div>
+                  <div class="english-name">Rasid</div>
+                </div>
+                <div class="status-chip status-conflict">
+                  <span class="lang-ar">تعارض واضح</span>
+                  <span class="lang-en">Clear conflict</span>
+                </div>
+              </div>
+              <div class="card-blocks">
+                <div class="info-block">
+                  <h4 class="lang-ar">حالة التعارض في السعودية</h4>
+                  <h4 class="lang-en">Conflict status in Saudi Arabia</h4>
+                  <p class="lang-ar">يوجد له تعارض واضح وملحوظ، سواء رسميًا أو تجاريًا أو في خدمات ومنصات معروفة.</p>
+                  <p class="lang-en">There is a clear and noticeable conflict, whether official, commercial, or linked to known services or platforms.</p>
+                </div>
+                <div class="info-block">
+                  <h4 class="lang-ar">علاقته بالنظام</h4>
+                  <h4 class="lang-en">Relevance to the system</h4>
+                  <p class="lang-ar">علاقته بالنظام قوية جدًا. فالنظام يرصد الحركة، ويراقب الرحلة، ويرى الانحراف، ويتابع الحالة.</p>
+                  <p class="lang-en">Its relevance to the system is very strong. The system observes movement, monitors the trip, spots deviations, and follows status.</p>
+                </div>
+                <div class="info-block">
+                  <h4 class="lang-ar">كيف يعكس مفهوم النظام</h4>
+                  <h4 class="lang-en">How it reflects the system concept</h4>
+                  <p class="lang-ar">يعكس المراقبة، والانتباه، والمتابعة، والكشف، والتحقق. وهو من أدق الأسماء دلاليًا من ناحية الوظيفة الرقابية.</p>
+                  <p class="lang-en">It reflects monitoring, alertness, follow-up, detection, and verification. It is one of the most precise names in terms of the system’s regulatory function.</p>
+                </div>
+                <div class="info-block">
+                  <h4 class="lang-ar">فلسفة الاسم</h4>
+                  <h4 class="lang-en">Name philosophy</h4>
+                  <p class="lang-ar">قائمة على مفهوم الرصد، أي المراقبة الدقيقة، والترقب، والاهتمام بما يقع في المسار.</p>
+                  <p class="lang-en">The name is built around the concept of observation, close monitoring, and active awareness of what happens along the route.</p>
+                </div>
+                <div class="info-block">
+                  <h4 class="lang-ar">الجذر والبعد اللغوي والتاريخي</h4>
+                  <h4 class="lang-en">Linguistic root and historical depth</h4>
+                  <p class="lang-ar">الجذر ر ص د من أقوى الجذور العربية في المجال الرقابي والتنظيمي. وله بعد قديم واضح في معاني الحراسة، والمراقبة، والترقب، ومتابعة الحركة.</p>
+                  <p class="lang-en">The root ر ص د is one of the strongest Arabic roots in the field of oversight and regulation. Historically, it carries meanings tied to guarding, monitoring, observing, and tracking movement.</p>
+                </div>
+                <div class="info-block">
+                  <h4 class="lang-ar">أمثلة استعمال حيّة</h4>
+                  <h4 class="lang-en">Real usage examples</h4>
+                  <div class="mini-list">
+                    <span class="lang-ar">راصد يتابع حركة الشحنات.</span>
+                    <span class="lang-ar">يمكن عبر راصد مراقبة الامتثال.</span>
+                    <span class="lang-ar">راصد يوضح مسار النقل في الوقت الحقيقي.</span>
+                    <span class="lang-en">Rasid tracks shipment movement.</span>
+                    <span class="lang-en">Compliance can be monitored through Rasid.</span>
+                    <span class="lang-en">Rasid shows the transport route in real time.</span>
+                  </div>
+                </div>
+                <div class="info-block">
+                  <h4 class="lang-ar">مدى اتساقه مع دليل موان</h4>
+                  <h4 class="lang-en">How well it aligns with the MWAN brand guide</h4>
+                  <p class="lang-ar">يتسق بقوة مع الحزم، والموثوقية، والامتثال، والشفافية، والطابع التنظيمي. لكنه يصطدم مع الحوكمة، وتفادي التداخل، والتميّز الاسمي بسبب التعارض الواضح.</p>
+                  <p class="lang-en">It aligns strongly with authority, trust, compliance, transparency, and regulatory tone. What works against it is governance concerns, avoiding overlap, and name distinctiveness because of the clear conflict.</p>
+                </div>
+                <div class="info-block">
+                  <h4 class="lang-ar">ملاحظات إضافية</h4>
+                  <h4 class="lang-en">Additional notes</h4>
+                  <p class="lang-ar">هذا الاسم من الحالات التي يكون فيها المعنى قويًا جدًا، لكن البيئة الاسمية المحيطة به غير نظيفة. أي أن الإشكال ليس في الاسم نفسه، بل في واقعه داخل المملكة.</p>
+                  <p class="lang-en">This is one of those cases where the meaning is very strong, but the naming environment around it is not clean. The problem is not the name itself. It is the local naming landscape.</p>
+                </div>
+              </div>
+            </article>
+
+            <article class="name-card" data-group="oversight conflict">
+              <div class="card-top">
+                <div class="name-lockup">
+                  <div class="arabic-name">مرصد</div>
+                  <div class="english-name">Marsad</div>
+                </div>
+                <div class="status-chip status-conflict">
+                  <span class="lang-ar">تعارض واضح</span>
+                  <span class="lang-en">Clear conflict</span>
+                </div>
+              </div>
+              <div class="card-blocks">
+                <div class="info-block">
+                  <h4 class="lang-ar">حالة التعارض في السعودية</h4>
+                  <h4 class="lang-en">Conflict status in Saudi Arabia</h4>
+                  <p class="lang-ar">يوجد تعارض واضح، خاصة في استخدامات حكومية معروفة.</p>
+                  <p class="lang-en">There is a clear conflict, especially with known government usage.</p>
+                </div>
+                <div class="info-block">
+                  <h4 class="lang-ar">علاقته بالنظام</h4>
+                  <h4 class="lang-en">Relevance to the system</h4>
+                  <p class="lang-ar">يرتبط بالنظام من زاوية أن المنظومة أشبه بجهة رقابية أو نافذة إشرافية ترى المشهد، وتتابع الحركة، وتجمع صورة شاملة.</p>
+                  <p class="lang-en">It relates to the system through the idea that the platform acts like an observation point or oversight window that sees movement, tracks activity, and builds a full picture.</p>
+                </div>
+                <div class="info-block">
+                  <h4 class="lang-ar">كيف يعكس مفهوم النظام</h4>
+                  <h4 class="lang-en">How it reflects the system concept</h4>
+                  <p class="lang-ar">يعكس موضع الرقابة، والإشراف على الحركة، والرؤية الشاملة، والمتابعة المؤسسية. وهو أقرب من راصد إلى معنى المنصة أو البنية الرقابية بدل معنى الفعل الرقابي فقط.</p>
+                  <p class="lang-en">It reflects a monitoring point, oversight of movement, broad visibility, and institutional follow-up. It is closer than Rasid to the idea of a platform or regulatory structure rather than simply the act of monitoring.</p>
+                </div>
+                <div class="info-block">
+                  <h4 class="lang-ar">فلسفة الاسم</h4>
+                  <h4 class="lang-en">Name philosophy</h4>
+                  <p class="lang-ar">اسم مكان من الرصد، أي الموضع الذي تُراقَب منه الأشياء.</p>
+                  <p class="lang-en">It is a place-based form from the same root, meaning the point from which things are observed.</p>
+                </div>
+                <div class="info-block">
+                  <h4 class="lang-ar">الجذر والبعد اللغوي والتاريخي</h4>
+                  <h4 class="lang-en">Linguistic root and historical depth</h4>
+                  <p class="lang-ar">ينتمي إلى الجذر نفسه ر ص د، لكنه يأتي بصيغة أكثر مؤسسية وثباتًا. له نبرة رسمية ومعتبرة، ويصلح ذهنيًا للمرجعيات والمؤسسات.</p>
+                  <p class="lang-en">It comes from the same root ر ص د, but in a more institutional, stable form. It has a formal tone and can mentally fit authoritative or reference-based entities.</p>
+                </div>
+                <div class="info-block">
+                  <h4 class="lang-ar">أمثلة استعمال حيّة</h4>
+                  <h4 class="lang-en">Real usage examples</h4>
+                  <div class="mini-list">
+                    <span class="lang-ar">مرصد يتيح متابعة حركة الشحنات.</span>
+                    <span class="lang-ar">مرصد النقل يربط بين البيانات والرحلات.</span>
+                    <span class="lang-ar">من خلال مرصد يمكن مراقبة الامتثال.</span>
+                    <span class="lang-en">Marsad enables shipment movement monitoring.</span>
+                    <span class="lang-en">The transport observatory links data and trips.</span>
+                    <span class="lang-en">Through Marsad, compliance can be monitored.</span>
+                  </div>
+                </div>
+                <div class="info-block">
+                  <h4 class="lang-ar">مدى اتساقه مع دليل موان</h4>
+                  <h4 class="lang-en">How well it aligns with the MWAN brand guide</h4>
+                  <p class="lang-ar">يتسق مع الحزم، والموثوقية، والتنظيم، والإشراف، والصوت المؤسسي. لكنه يضعفه التعارض القائم، وانخفاض التفرّد.</p>
+                  <p class="lang-en">It aligns with authority, trust, regulation, oversight, and institutional tone. It is weakened by existing conflict and lower distinctiveness.</p>
+                </div>
+                <div class="info-block">
+                  <h4 class="lang-ar">ملاحظات إضافية</h4>
+                  <h4 class="lang-en">Additional notes</h4>
+                  <p class="lang-ar">من حيث البنية اللغوية والسمعة الذهنية هو اسم قوي. ومن حيث الواقع الاسمي داخل السعودية، يحتاج حذرًا كبيرًا.</p>
+                  <p class="lang-en">Linguistically and conceptually, it is a strong name. In terms of the existing naming environment in Saudi Arabia, it needs serious caution.</p>
+                </div>
+              </div>
+            </article>
+
+            <article class="name-card" data-group="oversight conflict">
+              <div class="card-top">
+                <div class="name-lockup">
+                  <div class="arabic-name">رصد</div>
+                  <div class="english-name">Rasd</div>
+                </div>
+                <div class="status-chip status-conflict">
+                  <span class="lang-ar">تعارض واستهلاك مرتفع</span>
+                  <span class="lang-en">Conflict and heavy use</span>
+                </div>
+              </div>
+              <div class="card-blocks">
+                <div class="info-block">
+                  <h4 class="lang-ar">حالة التعارض في السعودية</h4>
+                  <h4 class="lang-en">Conflict status in Saudi Arabia</h4>
+                  <p class="lang-ar">يوجد تعارض واضح، كما أن الاسم مستهلك جدًا.</p>
+                  <p class="lang-en">There is a clear conflict, and the name is also heavily used.</p>
+                </div>
+                <div class="info-block">
+                  <h4 class="lang-ar">علاقته بالنظام</h4>
+                  <h4 class="lang-en">Relevance to the system</h4>
+                  <p class="lang-ar">العلاقة وظيفية مباشرة جدًا. النظام يرصد الحركة، ويرصد المسار، ويرصد الامتثال.</p>
+                  <p class="lang-en">The link is highly functional and direct. The system monitors movement, routes, and compliance.</p>
+                </div>
+                <div class="info-block">
+                  <h4 class="lang-ar">كيف يعكس مفهوم النظام</h4>
+                  <h4 class="lang-en">How it reflects the system concept</h4>
+                  <p class="lang-ar">يعكس وظيفة النظام بشكل واضح جدًا، لكن بطريقة تقريرية ومباشرة أكثر من كونها براندية.</p>
+                  <p class="lang-en">It reflects the system’s function very clearly, but in a descriptive and technical way rather than a brand-oriented one.</p>
+                </div>
+                <div class="info-block">
+                  <h4 class="lang-ar">فلسفة الاسم</h4>
+                  <h4 class="lang-en">Name philosophy</h4>
+                  <p class="lang-ar">الاسم نفسه هو الفعل أو الجوهر الرقابي المباشر.</p>
+                  <p class="lang-en">The name is essentially the regulatory action itself.</p>
+                </div>
+                <div class="info-block">
+                  <h4 class="lang-ar">الجذر والبعد اللغوي والتاريخي</h4>
+                  <h4 class="lang-en">Linguistic root and historical depth</h4>
+                  <p class="lang-ar">جذر قوي جدًا كما في راصد ومرصد. لكن استخدام الاسم بصيغة المصدر رصد يجعله أقرب إلى عنوان وظيفي أو تقني، لا إلى اسم علامة متمايزة.</p>
+                  <p class="lang-en">It comes from the same strong root as Rasid and Marsad. However, using the bare verbal noun Rasd makes it feel more like a functional label or a system feature than a distinct brand name.</p>
+                </div>
+                <div class="info-block">
+                  <h4 class="lang-ar">أمثلة استعمال حيّة</h4>
+                  <h4 class="lang-en">Real usage examples</h4>
+                  <div class="mini-list">
+                    <span class="lang-ar">رصد حركة النقل.</span>
+                    <span class="lang-ar">رصد الامتثال.</span>
+                    <span class="lang-ar">رصد الرحلات.</span>
+                    <span class="lang-en">Transport monitoring.</span>
+                    <span class="lang-en">Compliance monitoring.</span>
+                    <span class="lang-en">Trip monitoring.</span>
+                  </div>
+                </div>
+                <div class="info-block">
+                  <h4 class="lang-ar">مدى اتساقه مع دليل موان</h4>
+                  <h4 class="lang-en">How well it aligns with the MWAN brand guide</h4>
+                  <p class="lang-ar">يتسق مع الوضوح، والوظيفة، والامتثال، والمهنية. لكنه أضعف من ناحية الابتكار، والتميّز، وقابلية التمركز كعلامة مستقلة، والحوكمة بسبب التعارض.</p>
+                  <p class="lang-en">It aligns with clarity, function, compliance, and professionalism. It is weaker in terms of innovation, distinctiveness, ability to stand as a brand on its own, and governance due to conflict.</p>
+                </div>
+                <div class="info-block">
+                  <h4 class="lang-ar">ملاحظات إضافية</h4>
+                  <h4 class="lang-en">Additional notes</h4>
+                  <p class="lang-ar">اسم ممتاز كلغة وصف وظيفي أو اسم وحدة داخل النظام، لكنه يحتاج مراجعة إذا استُخدم كاسم رئيسي.</p>
+                  <p class="lang-en">It is an excellent descriptive term or internal feature name, but it needs more thought if used as the primary system name.</p>
+                </div>
+              </div>
+            </article>
+
+            <article class="name-card" data-group="movement conflict">
+              <div class="card-top">
+                <div class="name-lockup">
+                  <div class="arabic-name">مَسرى</div>
+                  <div class="english-name">Masra</div>
+                </div>
+                <div class="status-chip status-conflict">
+                  <span class="lang-ar">تعارض قائم</span>
+                  <span class="lang-en">Existing conflict</span>
+                </div>
+              </div>
+              <div class="card-blocks">
+                <div class="info-block">
+                  <h4 class="lang-ar">حالة التعارض في السعودية</h4>
+                  <h4 class="lang-en">Conflict status in Saudi Arabia</h4>
+                  <p class="lang-ar">يوجد تعارض ظاهر أو استخدام قائم يضعف نظافته.</p>
+                  <p class="lang-en">There appears to be an existing conflict or prior use that weakens its cleanliness.</p>
+                </div>
+                <div class="info-block">
+                  <h4 class="lang-ar">علاقته بالنظام</h4>
+                  <h4 class="lang-en">Relevance to the system</h4>
+                  <p class="lang-ar">علاقته بالنظام جيدة جدًا، لأنه يشير إلى خط الحركة أو مجرى الانتقال أو الممر الذي تجري فيه الرحلة.</p>
+                  <p class="lang-en">Its relevance is strong because it suggests the line of movement, the route of transfer, or the channel through which the journey runs.</p>
+                </div>
+                <div class="info-block">
+                  <h4 class="lang-ar">كيف يعكس مفهوم النظام</h4>
+                  <h4 class="lang-en">How it reflects the system concept</h4>
+                  <p class="lang-ar">يعكس المسار الجاري، وامتداد الرحلة، وحركة النقل، والتنقل المنظّم. وهو في هذا أقرب إلى تصوير الرحلة نفسها.</p>
+                  <p class="lang-en">It reflects an active route, the extension of the trip, transport movement, and structured mobility. In that sense, it is closer to portraying the journey itself.</p>
+                </div>
+                <div class="info-block">
+                  <h4 class="lang-ar">فلسفة الاسم</h4>
+                  <h4 class="lang-en">Name philosophy</h4>
+                  <p class="lang-ar">من السرى، لكن بصيغة اسم تحمل معنى المكان أو الخط الذي يجري فيه الانتقال.</p>
+                  <p class="lang-en">It comes from the same movement-based idea as Sura, but in a form that suggests the route or place through which movement happens.</p>
+                </div>
+                <div class="info-block">
+                  <h4 class="lang-ar">الجذر والبعد اللغوي والتاريخي</h4>
+                  <h4 class="lang-en">Linguistic root and historical depth</h4>
+                  <p class="lang-ar">اسم عربي فصيح، جميل، وله نبرة رفيعة ورشيقة. وفيه رصيد جمالي ولغوي أكبر من كثير من الأسماء الوظيفية المباشرة.</p>
+                  <p class="lang-en">It is an elegant classical Arabic name with a refined tone. It carries more linguistic and aesthetic value than many direct functional names.</p>
+                </div>
+                <div class="info-block">
+                  <h4 class="lang-ar">أمثلة استعمال حيّة</h4>
+                  <h4 class="lang-en">Real usage examples</h4>
+                  <div class="mini-list">
+                    <span class="lang-ar">اعتمد الرحلة في مسرى.</span>
+                    <span class="lang-ar">يعرض مسرى خط النقل من المصدر إلى الوجهة.</span>
+                    <span class="lang-ar">مسرى يرفع وضوح حركة الشحنات.</span>
+                    <span class="lang-en">Approve the trip in Masra.</span>
+                    <span class="lang-en">Masra displays the transport route from source to destination.</span>
+                    <span class="lang-en">Masra improves visibility into shipment movement.</span>
+                  </div>
+                </div>
+                <div class="info-block">
+                  <h4 class="lang-ar">مدى اتساقه مع دليل موان</h4>
+                  <h4 class="lang-en">How well it aligns with the MWAN brand guide</h4>
+                  <p class="lang-ar">يتسق مع الطابع التقدّمي، وجودة العلامة، والأناقة البصرية، والقابلية للتفعيل. ويتسق بدرجة أقل مع الوضوح الفوري للوظيفة، والتميّز الحوكمي إذا كان عليه تعارض قائم.</p>
+                  <p class="lang-en">It aligns with a forward-looking tone, brand quality, visual elegance, and ease of activation. It aligns less strongly with immediate functional clarity and governance distinctiveness if the existing conflict remains.</p>
+                </div>
+                <div class="info-block">
+                  <h4 class="lang-ar">ملاحظات إضافية</h4>
+                  <h4 class="lang-en">Additional notes</h4>
+                  <p class="lang-ar">الاسم من الأسماء الجميلة جدًا على المستوى اللفظي، لكنه يحتاج دائمًا مراجعة عملية بسبب الواقع الاسمي.</p>
+                  <p class="lang-en">It is a very attractive name at the verbal level, but it always needs practical review because of the local naming context.</p>
+                </div>
+              </div>
+            </article>
+
+            <article class="name-card" data-group="conflict">
+              <div class="card-top">
+                <div class="name-lockup">
+                  <div class="arabic-name">دليل</div>
+                  <div class="english-name">Daleel</div>
+                </div>
+                <div class="status-chip status-conflict">
+                  <span class="lang-ar">تعارض قوي</span>
+                  <span class="lang-en">Strong conflict</span>
+                </div>
+              </div>
+              <div class="card-blocks">
+                <div class="info-block">
+                  <h4 class="lang-ar">حالة التعارض في السعودية</h4>
+                  <h4 class="lang-en">Conflict status in Saudi Arabia</h4>
+                  <p class="lang-ar">يوجد تعارض واضح وقوي.</p>
+                  <p class="lang-en">There is a strong and clear conflict.</p>
+                </div>
+                <div class="info-block">
+                  <h4 class="lang-ar">علاقته بالنظام</h4>
+                  <h4 class="lang-en">Relevance to the system</h4>
+                  <p class="lang-ar">يمكن ربطه بالنظام من زاوية أن المنظومة تدل على الطريق، وتوجّه المستخدم، وتكشف له بيانات الرحلة، وتمنحه مرجعية واضحة. لكنه لا يعبّر بقوة عن التتبع الحركي بقدر ما يعبّر عن الإرشاد والمرجعية.</p>
+                  <p class="lang-en">It can connect to the system through the idea that the platform guides the user, points to the path, reveals journey data, and provides a clear reference. It does not strongly express active movement tracking. It leans more toward guidance and reference.</p>
+                </div>
+                <div class="info-block">
+                  <h4 class="lang-ar">كيف يعكس مفهوم النظام</h4>
+                  <h4 class="lang-en">How it reflects the system concept</h4>
+                  <p class="lang-ar">يعكس الاستدلال، والوصول إلى المعلومات، والمرجعية، والتوضيح. ولا يعكس بنفس القوة تتبع الحركة، ورصد المسار، والرقابة الميدانية.</p>
+                  <p class="lang-en">It reflects guidance, access to information, reference, and clarification. It does not express as strongly movement tracking, route monitoring, and field-level oversight.</p>
+                </div>
+                <div class="info-block">
+                  <h4 class="lang-ar">فلسفة الاسم</h4>
+                  <h4 class="lang-en">Name philosophy</h4>
+                  <p class="lang-ar">الاسم قائم على ما يُستدل به على الطريق أو الحقيقة أو الوجهة.</p>
+                  <p class="lang-en">It is built around the idea of what guides a person to the road, the truth, or the destination.</p>
+                </div>
+                <div class="info-block">
+                  <h4 class="lang-ar">الجذر والبعد اللغوي والتاريخي</h4>
+                  <h4 class="lang-en">Linguistic root and historical depth</h4>
+                  <p class="lang-ar">دليل من الأسماء العربية الراسخة جدًا، وله حضور قوي جدًا في اللغة. وهو واضح ومفهوم ويعمل بسهولة في الخطاب اليومي والمؤسسي.</p>
+                  <p class="lang-en">Daleel is one of the most rooted and widely understood Arabic names. It is clear, familiar, and easy to use in both everyday and institutional language.</p>
+                </div>
+                <div class="info-block">
+                  <h4 class="lang-ar">أمثلة استعمال حيّة</h4>
+                  <h4 class="lang-en">Real usage examples</h4>
+                  <div class="mini-list">
+                    <span class="lang-ar">دليل يوضح بيانات الرحلة.</span>
+                    <span class="lang-ar">يمكنك عبر دليل التحقق من المعلومات.</span>
+                    <span class="lang-ar">دليل يربط أطراف الرحلة.</span>
+                    <span class="lang-en">Daleel shows trip data.</span>
+                    <span class="lang-en">You can verify information through Daleel.</span>
+                    <span class="lang-en">Daleel connects the parties involved in the trip.</span>
+                  </div>
+                </div>
+                <div class="info-block">
+                  <h4 class="lang-ar">مدى اتساقه مع دليل موان</h4>
+                  <h4 class="lang-en">How well it aligns with the MWAN brand guide</h4>
+                  <p class="lang-ar">يتسق مع الوضوح، وسهولة الوصول، والمهنية، وقابلية الفهم. لكنه أضعف في تعبيره عن الامتثال والرقابة، وتمثيله للحركة الفعلية، والحوكمة والتفرّد بسبب التعارض.</p>
+                  <p class="lang-en">It aligns with clarity, accessibility, professionalism, and ease of understanding. It is weaker in terms of expressing compliance and oversight, representing actual movement, and governance and distinctiveness due to the conflict.</p>
+                </div>
+                <div class="info-block">
+                  <h4 class="lang-ar">ملاحظات إضافية</h4>
+                  <h4 class="lang-en">Additional notes</h4>
+                  <p class="lang-ar">اسم قوي جدًا لغويًا، لكنه على الأرجح يخدم منتجًا إرشاديًا أو معلوماتيًا أكثر من خدمته لمنصة تتبع تشغيلية.</p>
+                  <p class="lang-en">It is a strong Arabic name, but it would likely serve an informational or guidance product better than a shipment-tracking platform.</p>
+                </div>
+              </div>
+            </article>
+
+            <article class="name-card" data-group="movement conflict">
+              <div class="card-top">
+                <div class="name-lockup">
+                  <div class="arabic-name">سالك</div>
+                  <div class="english-name">Salik</div>
+                </div>
+                <div class="status-chip status-conflict">
+                  <span class="lang-ar">تعارض معروف</span>
+                  <span class="lang-en">Known conflict</span>
+                </div>
+              </div>
+              <div class="card-blocks">
+                <div class="info-block">
+                  <h4 class="lang-ar">حالة التعارض في السعودية</h4>
+                  <h4 class="lang-en">Conflict status in Saudi Arabia</h4>
+                  <p class="lang-ar">يوجد تعارض معروف على مستوى اسم مؤسسي مشهور.</p>
+                  <p class="lang-en">There is a known conflict at the level of a well-known institutional name.</p>
+                </div>
+                <div class="info-block">
+                  <h4 class="lang-ar">علاقته بالنظام</h4>
+                  <h4 class="lang-en">Relevance to the system</h4>
+                  <p class="lang-ar">العلاقة جيدة جدًا. فسالك هو الذي يسلك الطريق، وهذا يتصل مباشرة بالشاحنة، أو الرحلة، أو الحمولة بوصفها تسلك مسارًا معلومًا.</p>
+                  <p class="lang-en">Its connection to the system is very good. Salik is the one who takes the road, which directly connects to the truck, the trip, or the shipment as something moving along a known route.</p>
+                </div>
+                <div class="info-block">
+                  <h4 class="lang-ar">كيف يعكس مفهوم النظام</h4>
+                  <h4 class="lang-en">How it reflects the system concept</h4>
+                  <p class="lang-ar">يعكس السير في طريق، والانتقال المنضبط، ووجود خط معلوم، وتتبع ما هو في حالة حركة. وهو من الأسماء القوية في تمثيل الرحلة بوصفها عملية حيّة.</p>
+                  <p class="lang-en">It reflects moving along a route, structured travel, a clearly defined path, and tracking something that is in motion. It is one of the stronger names for representing the trip as a live process.</p>
+                </div>
+                <div class="info-block">
+                  <h4 class="lang-ar">فلسفة الاسم</h4>
+                  <h4 class="lang-en">Name philosophy</h4>
+                  <p class="lang-ar">قائمة على السلوك والمسير في خط واضح.</p>
+                  <p class="lang-en">It is built around the idea of taking a path and moving through a clear route.</p>
+                </div>
+                <div class="info-block">
+                  <h4 class="lang-ar">الجذر والبعد اللغوي والتاريخي</h4>
+                  <h4 class="lang-en">Linguistic root and historical depth</h4>
+                  <p class="lang-ar">من الجذر س ل ك، وهو جذر مهم جدًا في العربية ويدور حول الدخول في الطريق، واتباع المسار، والجريان في قناة أو خط. والاسم سهل جدًا، طبيعي جدًا، وله وقع جيد في السعودية.</p>
+                  <p class="lang-en">It comes from the root س ل ك, an important Arabic root associated with entering a path, following a route, and moving through a channel or line. The name is simple, natural, and has a good sound in Saudi Arabic.</p>
+                </div>
+                <div class="info-block">
+                  <h4 class="lang-ar">أمثلة استعمال حيّة</h4>
+                  <h4 class="lang-en">Real usage examples</h4>
+                  <div class="mini-list">
+                    <span class="lang-ar">سجّل الرحلة في سالك.</span>
+                    <span class="lang-ar">يتيح سالك تتبع خط النقل المعتمد.</span>
+                    <span class="lang-ar">من خلال سالك يمكن التحقق من مسار الحمولة.</span>
+                    <span class="lang-en">Register the trip in Salik.</span>
+                    <span class="lang-en">Salik allows tracking of the approved transport route.</span>
+                    <span class="lang-en">Through Salik, the shipment route can be verified.</span>
+                  </div>
+                </div>
+                <div class="info-block">
+                  <h4 class="lang-ar">مدى اتساقه مع دليل موان</h4>
+                  <h4 class="lang-en">How well it aligns with the MWAN brand guide</h4>
+                  <p class="lang-ar">يتسق مع السهولة، وقابلية التداول، والقرب من المستخدم، والتفعيل الرقمي، وارتباطه بالحركة. ويواجه تحديًا في التفرّد، والحوكمة، وتجنّب التداخل مع اسم معروف قائم.</p>
+                  <p class="lang-en">It aligns with simplicity, ease of use, accessibility, digital activation, and a clear connection to movement. Its challenge lies in distinctiveness, governance, and avoiding overlap with a known existing name.</p>
+                </div>
+                <div class="info-block">
+                  <h4 class="lang-ar">ملاحظات إضافية</h4>
+                  <h4 class="lang-en">Additional notes</h4>
+                  <p class="lang-ar">هذا الاسم من الأسماء التي تنجح كثيرًا في التداول الشفهي والبصري، لكن عليه ضغط واضح من الواقع الاسمي.</p>
+                  <p class="lang-en">This is one of the names that works very well in speech and visual identity, but it does face pressure from the local naming environment.</p>
+                </div>
+              </div>
+            </article>
+
+            <article class="name-card" data-group="movement conflict">
+              <div class="card-top">
+                <div class="name-lockup">
+                  <div class="arabic-name">مسير</div>
+                  <div class="english-name">Maseer</div>
+                </div>
+                <div class="status-chip status-conflict">
+                  <span class="lang-ar">استخدام واسع</span>
+                  <span class="lang-en">Widely used</span>
+                </div>
+              </div>
+              <div class="card-blocks">
+                <div class="info-block">
+                  <h4 class="lang-ar">حالة التعارض في السعودية</h4>
+                  <h4 class="lang-en">Conflict status in Saudi Arabia</h4>
+                  <p class="lang-ar">له استخدام واسع، وخصوصًا في السياقات الإدارية والخدمية.</p>
+                  <p class="lang-en">It is widely used, especially in administrative and service-related contexts.</p>
+                </div>
+                <div class="info-block">
+                  <h4 class="lang-ar">علاقته بالنظام</h4>
+                  <h4 class="lang-en">Relevance to the system</h4>
+                  <p class="lang-ar">العلاقة موجودة من جهة أن النظام يتعامل مع السير والتسيير والحركة. لكنه لا يبدو متخصصًا كفاية في النقل الرقابي.</p>
+                  <p class="lang-en">The connection exists in the sense that the system deals with movement and process. Still, it does not feel specific enough to regulated transport.</p>
+                </div>
+                <div class="info-block">
+                  <h4 class="lang-ar">كيف يعكس مفهوم النظام</h4>
+                  <h4 class="lang-en">How it reflects the system concept</h4>
+                  <p class="lang-ar">يعكس السير، والحركة، والتقدم في المسار. لكنه لا يعكس بقوة الامتثال، والتتبع، والإحاطة، والتوثيق.</p>
+                  <p class="lang-en">It reflects movement, progression, and forward motion along a route. It does not strongly reflect compliance, tracking, visibility, or documentation.</p>
+                </div>
+                <div class="info-block">
+                  <h4 class="lang-ar">فلسفة الاسم</h4>
+                  <h4 class="lang-en">Name philosophy</h4>
+                  <p class="lang-ar">اسم يرتبط بالحركة الجارية أو عملية السير.</p>
+                  <p class="lang-en">The name is tied to movement and the process of travel.</p>
+                </div>
+                <div class="info-block">
+                  <h4 class="lang-ar">الجذر والبعد اللغوي والتاريخي</h4>
+                  <h4 class="lang-en">Linguistic root and historical depth</h4>
+                  <p class="lang-ar">الجذر واضح وقوي، لكن الاسم في الاستخدام المعاصر صار أقرب إلى مفاهيم إدارية شائعة مثل مسير الرواتب ونحوها، وهذا يؤثر على صورته الذهنية.</p>
+                  <p class="lang-en">Its root is clear and strong, but in contemporary use the name feels closely associated with common administrative expressions such as payroll runs and similar functions. That affects its image.</p>
+                </div>
+                <div class="info-block">
+                  <h4 class="lang-ar">أمثلة استعمال حيّة</h4>
+                  <h4 class="lang-en">Real usage examples</h4>
+                  <div class="mini-list">
+                    <span class="lang-ar">تمت متابعة الرحلة في مسير.</span>
+                    <span class="lang-ar">يتيح مسير عرض حركة النقل.</span>
+                    <span class="lang-en">The trip was tracked in Maseer.</span>
+                    <span class="lang-en">Maseer provides visibility into transport movement.</span>
+                  </div>
+                </div>
+                <div class="info-block">
+                  <h4 class="lang-ar">مدى اتساقه مع دليل موان</h4>
+                  <h4 class="lang-en">How well it aligns with the MWAN brand guide</h4>
+                  <p class="lang-ar">يتسق جزئيًا مع السهولة، والوضوح، والطابع المؤسسي. لكن يضعفه الاستهلاك الواسع، وضعف التخصص الذهني، وعدم قوته في تمثيل هوية مميزة للنظام.</p>
+                  <p class="lang-en">It aligns in part with simplicity, clarity, and institutional tone. It is weakened by heavy existing use, weak specialization, and limited strength as a distinctive system identity.</p>
+                </div>
+                <div class="info-block">
+                  <h4 class="lang-ar">ملاحظات إضافية</h4>
+                  <h4 class="lang-en">Additional notes</h4>
+                  <p class="lang-ar">قد يصلح كاسم وظيفة أو خاصية، لكن يحتاج وزنًا إضافيًا إذا أريد له أن يكون اسمًا رئيسيًا.</p>
+                  <p class="lang-en">It may work as a function or a feature name, but it needs more weight if it is to become the main name.</p>
+                </div>
+              </div>
+            </article>
+
+            <article class="name-card" data-group="movement conflict">
+              <div class="card-top">
+                <div class="name-lockup">
+                  <div class="arabic-name">مسار</div>
+                  <div class="english-name">Masar</div>
+                </div>
+                <div class="status-chip status-conflict">
+                  <span class="lang-ar">تعارض قوي جدًا</span>
+                  <span class="lang-en">Very strong conflict</span>
+                </div>
+              </div>
+              <div class="card-blocks">
+                <div class="info-block">
+                  <h4 class="lang-ar">حالة التعارض في السعودية</h4>
+                  <h4 class="lang-en">Conflict status in Saudi Arabia</h4>
+                  <p class="lang-ar">يوجد تعارض قوي جدًا وواضح جدًا مع منصة حكومية معروفة.</p>
+                  <p class="lang-en">There is a very strong and very clear conflict with a well-known government platform.</p>
+                </div>
+                <div class="info-block">
+                  <h4 class="lang-ar">علاقته بالنظام</h4>
+                  <h4 class="lang-en">Relevance to the system</h4>
+                  <p class="lang-ar">العلاقة من أقوى العلاقات على الإطلاق. فالنظام يقوم على معرفة المسار، ومراقبة المسار، والتحقق من المسار، وتوثيق المسار.</p>
+                  <p class="lang-en">Its relevance is among the strongest of all the names. The system is fundamentally about knowing the route, monitoring the route, verifying the route, and documenting the route.</p>
+                </div>
+                <div class="info-block">
+                  <h4 class="lang-ar">كيف يعكس مفهوم النظام</h4>
+                  <h4 class="lang-en">How it reflects the system concept</h4>
+                  <p class="lang-ar">يعكس الرحلة، وخط النقل، واتجاه الحركة، والمسار النظامي، والطريق من المنشأ إلى الوجهة. وهذا يجعله من أكثر الأسماء دقة من حيث المعنى المجرّد.</p>
+                  <p class="lang-en">It reflects the trip, the transport line, direction of movement, the regulated route, and the path from origin to destination. That makes it one of the most accurate names in purely conceptual terms.</p>
+                </div>
+                <div class="info-block">
+                  <h4 class="lang-ar">فلسفة الاسم</h4>
+                  <h4 class="lang-en">Name philosophy</h4>
+                  <p class="lang-ar">الاسم قائم على الطريق أو الخط الذي يتحرك عليه الشيء. وهذه فلسفة مركزية جدًا بالنسبة للنظام.</p>
+                  <p class="lang-en">The name is built around the path or line along which something moves. That is central to the system itself.</p>
+                </div>
+                <div class="info-block">
+                  <h4 class="lang-ar">الجذر والبعد اللغوي والتاريخي</h4>
+                  <h4 class="lang-en">Linguistic root and historical depth</h4>
+                  <p class="lang-ar">اسم عربي سهل، واضح، معاصر في الاستعمال المؤسسي، ومقبول جدًا في التداول.</p>
+                  <p class="lang-en">It is an easy, clear Arabic word, common in contemporary institutional language, and highly usable.</p>
+                </div>
+                <div class="info-block">
+                  <h4 class="lang-ar">أمثلة استعمال حيّة</h4>
+                  <h4 class="lang-en">Real usage examples</h4>
+                  <div class="mini-list">
+                    <span class="lang-ar">اعرف مسار الرحلة.</span>
+                    <span class="lang-ar">مسار يربط بين نقاط النقل المختلفة.</span>
+                    <span class="lang-ar">يمكن عبر مسار التحقق من الوجهة النهائية.</span>
+                    <span class="lang-en">Know the route of the trip.</span>
+                    <span class="lang-en">Masar links the different points of transport.</span>
+                    <span class="lang-en">Through Masar, the final destination can be verified.</span>
+                  </div>
+                </div>
+                <div class="info-block">
+                  <h4 class="lang-ar">مدى اتساقه مع دليل موان</h4>
+                  <h4 class="lang-en">How well it aligns with the MWAN brand guide</h4>
+                  <p class="lang-ar">يتسق بدرجة عالية جدًا مع الوضوح، والبساطة، والمهنية، وسهولة التفعيل، وقابلية التداول، وربطه بفكرة النظام. لكن على مستوى الحوكمة، وجود تعارض قوي جدًا مع منصة حكومية رئيسة يجعل هذا الاسم حساسًا جدًا من ناحية التداخل والتميّز.</p>
+                  <p class="lang-en">It aligns very strongly with clarity, simplicity, professionalism, ease of activation, ease of use, and conceptual fit. But from a governance standpoint, the strong conflict with an existing major government platform makes it highly sensitive in terms of overlap and distinctiveness.</p>
+                </div>
+                <div class="info-block">
+                  <h4 class="lang-ar">ملاحظات إضافية</h4>
+                  <h4 class="lang-en">Additional notes</h4>
+                  <p class="lang-ar">هذه حالة اسم ممتاز معنويًا، لكنه يواجه عائقًا كبيرًا في البيئة المحلية.</p>
+                  <p class="lang-en">This is a case where the name is excellent conceptually, but faces a major obstacle in the local environment.</p>
+                </div>
+              </div>
+            </article>
+
+            <article class="name-card" data-group="movement conflict">
+              <div class="card-top">
+                <div class="name-lockup">
+                  <div class="arabic-name">مسلك</div>
+                  <div class="english-name">Maslak</div>
+                </div>
+                <div class="status-chip status-conflict">
+                  <span class="lang-ar">استخدام قائم</span>
+                  <span class="lang-en">Existing use</span>
+                </div>
+              </div>
+              <div class="card-blocks">
+                <div class="info-block">
+                  <h4 class="lang-ar">حالة التعارض في السعودية</h4>
+                  <h4 class="lang-en">Conflict status in Saudi Arabia</h4>
+                  <p class="lang-ar">يوجد استخدام قائم، لكنه أقل حدة من بعض الأسماء الأخرى.</p>
+                  <p class="lang-en">There is an existing use, though it is less severe than with some other names.</p>
+                </div>
+                <div class="info-block">
+                  <h4 class="lang-ar">علاقته بالنظام</h4>
+                  <h4 class="lang-en">Relevance to the system</h4>
+                  <p class="lang-ar">يرتبط بالنظام بصورة منطقية جدًا، لأن المسلك ليس فقط طريقًا، بل هو الطريق الذي يُسلك فعلًا، أي القناة الفعلية التي تمر فيها الحركة.</p>
+                  <p class="lang-en">It relates to the system in a very logical way, because Maslak is not just a route. It is the route that is actually taken, the channel through which movement really happens.</p>
+                </div>
+                <div class="info-block">
+                  <h4 class="lang-ar">كيف يعكس مفهوم النظام</h4>
+                  <h4 class="lang-en">How it reflects the system concept</h4>
+                  <p class="lang-ar">يعكس خط الحركة، والممر النظامي، والطريق الفعلي للرحلة، وانتقالًا يمكن تحديده ومراقبته. وفي هذا هو أكثر تخصصًا قليلًا من سبيل، وأقل شيوعًا من مسار.</p>
+                  <p class="lang-en">It reflects a movement line, a regulated passage, the actual path of the trip, and movement that can be identified and monitored. In this sense, it is more specialized than Sabeel and less common than Masar.</p>
+                </div>
+                <div class="info-block">
+                  <h4 class="lang-ar">فلسفة الاسم</h4>
+                  <h4 class="lang-en">Name philosophy</h4>
+                  <p class="lang-ar">قائمة على فكرة الطريق الذي يدخل فيه الشيء ويتحرك خلاله.</p>
+                  <p class="lang-en">It is based on the idea of the route that something enters and moves through.</p>
+                </div>
+                <div class="info-block">
+                  <h4 class="lang-ar">الجذر والبعد اللغوي والتاريخي</h4>
+                  <h4 class="lang-en">Linguistic root and historical depth</h4>
+                  <p class="lang-ar">من الجذر س ل ك، وهو جذر غني ومناسب جدًا للنظام. الاسم فصيح، وله ثقل لغوي جيد، لكنه أقل تداولًا يوميًا من مسار أو سبيل.</p>
+                  <p class="lang-en">It comes from the root س ل ك, which is rich and highly suitable for the system. The word is classical and carries good linguistic weight, though it is less familiar in everyday speech than Masar or Sabeel.</p>
+                </div>
+                <div class="info-block">
+                  <h4 class="lang-ar">أمثلة استعمال حيّة</h4>
+                  <h4 class="lang-en">Real usage examples</h4>
+                  <div class="mini-list">
+                    <span class="lang-ar">يحدد مسلك خط النقل المعتمد.</span>
+                    <span class="lang-ar">يساعد مسلك في تتبع الرحلة.</span>
+                    <span class="lang-ar">تم توثيق الشحنة عبر مسلك.</span>
+                    <span class="lang-en">Maslak defines the approved transport route.</span>
+                    <span class="lang-en">Maslak helps track the trip.</span>
+                    <span class="lang-en">The shipment was documented through Maslak.</span>
+                  </div>
+                </div>
+                <div class="info-block">
+                  <h4 class="lang-ar">مدى اتساقه مع دليل موان</h4>
+                  <h4 class="lang-en">How well it aligns with the MWAN brand guide</h4>
+                  <p class="lang-ar">يتسق مع المهنية، والمعنى المنهجي، ووضوح الصلة بالحركة، وملاءمة النظام الرقمي. ويتسق بدرجة أقل مع سهولة الوصول الفوري، والشيوع، وخفة التداول.</p>
+                  <p class="lang-en">It aligns with professionalism, structured meaning, clear relevance to movement, and suitability for a digital system. It aligns less strongly with immediate accessibility, familiarity, and ease of circulation in everyday use.</p>
+                </div>
+                <div class="info-block">
+                  <h4 class="lang-ar">ملاحظات إضافية</h4>
+                  <h4 class="lang-en">Additional notes</h4>
+                  <p class="lang-ar">من الأسماء الجيدة لغويًا ومنطقيًا، لكنه ليس أبسط الأسماء على المتلقي العام.</p>
+                  <p class="lang-en">It is a good name linguistically and logically, but it is not the simplest name for a general audience.</p>
+                </div>
+              </div>
+            </article>
+
+            <article class="name-card" data-group="movement conflict">
+              <div class="card-top">
+                <div class="name-lockup">
+                  <div class="arabic-name">سبيل</div>
+                  <div class="english-name">Sabeel</div>
+                </div>
+                <div class="status-chip status-conflict">
+                  <span class="lang-ar">تعارض جزئي</span>
+                  <span class="lang-en">Partial conflict</span>
+                </div>
+              </div>
+              <div class="card-blocks">
+                <div class="info-block">
+                  <h4 class="lang-ar">حالة التعارض في السعودية</h4>
+                  <h4 class="lang-en">Conflict status in Saudi Arabia</h4>
+                  <p class="lang-ar">يوجد له استخدام تجاري أو اسمي واضح، وبالتالي ليس نظيفًا بالكامل.</p>
+                  <p class="lang-en">There is visible commercial or naming use, so it is not entirely clean.</p>
+                </div>
+                <div class="info-block">
+                  <h4 class="lang-ar">علاقته بالنظام</h4>
+                  <h4 class="lang-en">Relevance to the system</h4>
+                  <p class="lang-ar">العلاقة منطقية من جهة أن النظام يحدد السبيل، أو يتيح معرفة السبيل، أو ينظم سبيل الرحلة من المصدر إلى الوجهة.</p>
+                  <p class="lang-en">Its relevance is logical in the sense that the system defines the route, reveals the route, or organizes the route of the trip from source to destination.</p>
+                </div>
+                <div class="info-block">
+                  <h4 class="lang-ar">كيف يعكس مفهوم النظام</h4>
+                  <h4 class="lang-en">How it reflects the system concept</h4>
+                  <p class="lang-ar">يعكس الطريق، والاتجاه، والقناة النظامية، ووضوح الوجهة. لكنه عام وواسع جدًا، ولا يرتبط بالتتبع الرقابي مباشرة بالقدر نفسه.</p>
+                  <p class="lang-en">It reflects the path, direction, a regulated channel, and clarity of destination. But it is broad and general, and it does not point directly enough to active tracking or regulatory oversight.</p>
+                </div>
+                <div class="info-block">
+                  <h4 class="lang-ar">فلسفة الاسم</h4>
+                  <h4 class="lang-en">Name philosophy</h4>
+                  <p class="lang-ar">اسم يقوم على معنى الطريق والاتجاه والوجهة.</p>
+                  <p class="lang-en">The name is built around the idea of path, direction, and destination.</p>
+                </div>
+                <div class="info-block">
+                  <h4 class="lang-ar">الجذر والبعد اللغوي والتاريخي</h4>
+                  <h4 class="lang-en">Linguistic root and historical depth</h4>
+                  <p class="lang-ar">سبيل من أكثر الكلمات العربية رسوخًا ووضوحًا وعمقًا. وله بعد لغوي وتاريخي قوي جدًا، وهو سهل ومفهوم وموجود في الوعي العربي بشكل عميق.</p>
+                  <p class="lang-en">Sabeel is one of the deepest and most established words in Arabic. It carries strong linguistic and historical depth, and it is easy to understand and firmly present in the Arabic mindset.</p>
+                </div>
+                <div class="info-block">
+                  <h4 class="lang-ar">أمثلة استعمال حيّة</h4>
+                  <h4 class="lang-en">Real usage examples</h4>
+                  <div class="mini-list">
+                    <span class="lang-ar">سبيل يوضح اتجاه الرحلة.</span>
+                    <span class="lang-ar">اعرف سبيل النقل عبر النظام.</span>
+                    <span class="lang-ar">سبيل يربط بين المنشأ والوجهة.</span>
+                    <span class="lang-en">Sabeel shows the direction of the trip.</span>
+                    <span class="lang-en">Know the route of transport through Sabeel.</span>
+                    <span class="lang-en">Sabeel connects the origin and the destination.</span>
+                  </div>
+                </div>
+                <div class="info-block">
+                  <h4 class="lang-ar">مدى اتساقه مع دليل موان</h4>
+                  <h4 class="lang-en">How well it aligns with the MWAN brand guide</h4>
+                  <p class="lang-ar">يتسق مع الوضوح، وسهولة التداول، والبعد العربي الأصيل، وبساطة الحضور اللفظي. لكن يضعفه عموميته الكبيرة، وضعف خصوصيته، وعدم وضوح الصلة الفورية بالتتبع أو الرصد، والتداخل الاسمي القائم.</p>
+                  <p class="lang-en">It aligns with clarity, ease of use, authentic Arabic depth, and a simple verbal presence. It is weakened by being too broad, limited specificity, weak immediate connection to tracking or monitoring, and existing naming overlap.</p>
+                </div>
+                <div class="info-block">
+                  <h4 class="lang-ar">ملاحظات إضافية</h4>
+                  <h4 class="lang-en">Additional notes</h4>
+                  <p class="lang-ar">اسم قوي لغويًا، لكنه قد يكون مناسبًا أكثر إذا كان الهدف رمزيًا أو اتجاهيًا، لا إذا كان الهدف إبراز الوظيفة الرقابية للنظام.</p>
+                  <p class="lang-en">It is a strong Arabic word, but it may be better suited to a symbolic or directional identity than to a clearly regulatory system name.</p>
+                </div>
+              </div>
+            </article>
+
+            <article class="name-card" data-group="movement conflict">
+              <div class="card-top">
+                <div class="name-lockup">
+                  <div class="arabic-name">عابر</div>
+                  <div class="english-name">Aaber</div>
+                </div>
+                <div class="status-chip status-conflict">
+                  <span class="lang-ar">تعارض معروف</span>
+                  <span class="lang-en">Known conflict</span>
+                </div>
+              </div>
+              <div class="card-blocks">
+                <div class="info-block">
+                  <h4 class="lang-ar">حالة التعارض في السعودية</h4>
+                  <h4 class="lang-en">Conflict status in Saudi Arabia</h4>
+                  <p class="lang-ar">يوجد تعارض معروف.</p>
+                  <p class="lang-en">There is a known conflict.</p>
+                </div>
+                <div class="info-block">
+                  <h4 class="lang-ar">علاقته بالنظام</h4>
+                  <h4 class="lang-en">Relevance to the system</h4>
+                  <p class="lang-ar">يرتبط بالنظام من زاوية العبور والمرور والانتقال بين النقاط.</p>
+                  <p class="lang-en">It connects to the system through the idea of crossing, passing through, and moving between points.</p>
+                </div>
+                <div class="info-block">
+                  <h4 class="lang-ar">كيف يعكس مفهوم النظام</h4>
+                  <h4 class="lang-en">How it reflects the system concept</h4>
+                  <p class="lang-ar">يعكس المرور، والانتقال، وعبور الشحنة، والحركة بين نقاط. لكنه لا يعكس بقوة التتبع، والرصد، والتوثيق، والتحقق، بل يميل إلى تصوير الحركة نفسها فقط.</p>
+                  <p class="lang-en">It reflects passage, movement, shipment crossing, and moving between points. It does not strongly reflect tracking, monitoring, documentation, or verification. It leans more toward depicting movement itself.</p>
+                </div>
+                <div class="info-block">
+                  <h4 class="lang-ar">فلسفة الاسم</h4>
+                  <h4 class="lang-en">Name philosophy</h4>
+                  <p class="lang-ar">قائمة على أن الشيء يعبر من موضع إلى آخر.</p>
+                  <p class="lang-en">It is built around the idea of something crossing from one place to another.</p>
+                </div>
+                <div class="info-block">
+                  <h4 class="lang-ar">الجذر والبعد اللغوي والتاريخي</h4>
+                  <h4 class="lang-en">Linguistic root and historical depth</h4>
+                  <p class="lang-ar">من جذر عربي واضح وسهل، والاسم نفسه جذاب لغويًا وسهل التداول.</p>
+                  <p class="lang-en">It comes from a clear and accessible Arabic root, and the name itself is attractive and easy to use.</p>
+                </div>
+                <div class="info-block">
+                  <h4 class="lang-ar">أمثلة استعمال حيّة</h4>
+                  <h4 class="lang-en">Real usage examples</h4>
+                  <div class="mini-list">
+                    <span class="lang-ar">عابر يتابع نقاط المرور.</span>
+                    <span class="lang-ar">تم تسجيل الرحلة في عابر.</span>
+                    <span class="lang-ar">يعرض عابر حركة الشحنة.</span>
+                    <span class="lang-en">Aaber tracks transit points.</span>
+                    <span class="lang-en">The trip was registered in Aaber.</span>
+                    <span class="lang-en">Aaber displays shipment movement.</span>
+                  </div>
+                </div>
+                <div class="info-block">
+                  <h4 class="lang-ar">مدى اتساقه مع دليل موان</h4>
+                  <h4 class="lang-en">How well it aligns with the MWAN brand guide</h4>
+                  <p class="lang-ar">يتسق مع البساطة، وسهولة النطق، وملاءمة الاستخدام الرقمي. ويتسق بدرجة أقل مع الوضوح الوظيفي، والتميّز، والحوكمة بسبب التعارض.</p>
+                  <p class="lang-en">It aligns with simplicity, ease of pronunciation, and suitability for digital use. It aligns less strongly with functional clarity, distinctiveness, and governance because of the conflict.</p>
+                </div>
+                <div class="info-block">
+                  <h4 class="lang-ar">ملاحظات إضافية</h4>
+                  <h4 class="lang-en">Additional notes</h4>
+                  <p class="lang-ar">من حيث البراند جميل، لكن من حيث البيئة الاسمية يحتاج حذرًا شديدًا.</p>
+                  <p class="lang-en">As a brand, it is attractive. In terms of the actual naming environment, it requires serious caution.</p>
+                </div>
+              </div>
+            </article>
+
+            <article class="name-card" data-group="conflict">
+              <div class="card-top">
+                <div class="name-lockup">
+                  <div class="arabic-name">مستدام</div>
+                  <div class="english-name">Mostadam</div>
+                </div>
+                <div class="status-chip status-conflict">
+                  <span class="lang-ar">تعارض واضح</span>
+                  <span class="lang-en">Clear conflict</span>
+                </div>
+              </div>
+              <div class="card-blocks">
+                <div class="info-block">
+                  <h4 class="lang-ar">حالة التعارض في السعودية</h4>
+                  <h4 class="lang-en">Conflict status in Saudi Arabia</h4>
+                  <p class="lang-ar">يوجد تعارض واضح، خاصة مع مبادرات أو برامج معروفة.</p>
+                  <p class="lang-en">There is a clear conflict, especially with known initiatives and programs.</p>
+                </div>
+                <div class="info-block">
+                  <h4 class="lang-ar">علاقته بالنظام</h4>
+                  <h4 class="lang-en">Relevance to the system</h4>
+                  <p class="lang-ar">يرتبط بالنظام من زاوية عامة، وهي أن النظام يخدم الاستدامة والبيئة والامتثال، لكن لا يرتبط مباشرة بوظيفته الأساسية.</p>
+                  <p class="lang-en">It relates to the system in a broad sense, in that the system serves sustainability, environmental goals, and compliance. It does not connect directly to the system’s core function.</p>
+                </div>
+                <div class="info-block">
+                  <h4 class="lang-ar">كيف يعكس مفهوم النظام</h4>
+                  <h4 class="lang-en">How it reflects the system concept</h4>
+                  <p class="lang-ar">يعكس الاستدامة، والأثر البيئي، والرؤية العامة للقطاع. ولا يعكس بوضوح التتبع، والشحنة، والحركة، والوثيقة، والمسار، والامتثال التشغيلي. أي أنه أقرب إلى هدف استراتيجي أعلى، لا إلى اسم النظام نفسه.</p>
+                  <p class="lang-en">It reflects sustainability, environmental impact, and the broader sector vision. It does not clearly reflect tracking, shipments, movement, documentation, routes, or operational compliance. So it feels closer to a higher strategic objective than to the name of the system itself.</p>
+                </div>
+                <div class="info-block">
+                  <h4 class="lang-ar">فلسفة الاسم</h4>
+                  <h4 class="lang-en">Name philosophy</h4>
+                  <p class="lang-ar">قائمة على الاستمرارية البيئية والنهج طويل المدى.</p>
+                  <p class="lang-en">It is built around environmental continuity and a long-term sustainability approach.</p>
+                </div>
+                <div class="info-block">
+                  <h4 class="lang-ar">الجذر والبعد اللغوي والتاريخي</h4>
+                  <h4 class="lang-en">Linguistic root and historical depth</h4>
+                  <p class="lang-ar">اسم حديث نسبيًا في الاستعمال المؤسسي، وسهل الفهم، وله قيمة إيجابية.</p>
+                  <p class="lang-en">It is relatively modern in institutional use, easy to understand, and positive in tone.</p>
+                </div>
+                <div class="info-block">
+                  <h4 class="lang-ar">أمثلة استعمال حيّة</h4>
+                  <h4 class="lang-en">Real usage examples</h4>
+                  <div class="mini-list">
+                    <span class="lang-ar">مستدام يدعم إدارة النفايات.</span>
+                    <span class="lang-ar">من خلال مستدام نرفع الامتثال البيئي.</span>
+                    <span class="lang-en">Mostadam supports waste management.</span>
+                    <span class="lang-en">Through Mostadam, we raise environmental compliance.</span>
+                  </div>
+                </div>
+                <div class="info-block">
+                  <h4 class="lang-ar">مدى اتساقه مع دليل موان</h4>
+                  <h4 class="lang-en">How well it aligns with the MWAN brand guide</h4>
+                  <p class="lang-ar">يتسق مع قيم موان، والاستدامة، والصورة البيئية، والرؤية المستقبلية. لكنه أقل اتساقًا مع وضوح وظيفة النظام، والتفعيل الرقمي كنظام تتبع، والدقة التشغيلية، والتميّز بسبب التعارض.</p>
+                  <p class="lang-en">It aligns with MWAN’s values, sustainability, environmental identity, and future orientation. It is less aligned with clarity of system function, digital activation as a tracking system, operational precision, and distinctiveness due to the conflict.</p>
+                </div>
+                <div class="info-block">
+                  <h4 class="lang-ar">ملاحظات إضافية</h4>
+                  <h4 class="lang-en">Additional notes</h4>
+                  <p class="lang-ar">اسم مناسب جدًا لبرنامج توعوي أو بيئي أو استراتيجي، أكثر من كونه مناسبًا لنظام تتبع شحنات نفايات.</p>
+                  <p class="lang-en">It is much better suited to an awareness, environmental, or strategic program than to a waste shipment tracking system.</p>
+                </div>
+              </div>
+            </article>
+
+            <article class="name-card" data-group="clean">
+              <div class="card-top">
+                <div class="name-lockup">
+                  <div class="arabic-name">تخلّص</div>
+                  <div class="english-name">Takhallus</div>
+                </div>
+                <div class="status-chip status-clean">
+                  <span class="lang-ar">لا يظهر تعارض بارز</span>
+                  <span class="lang-en">No major conflict found</span>
+                </div>
+              </div>
+              <div class="card-blocks">
+                <div class="info-block">
+                  <h4 class="lang-ar">حالة التعارض في السعودية</h4>
+                  <h4 class="lang-en">Conflict status in Saudi Arabia</h4>
+                  <p class="lang-ar">لا يظهر تعارض بارز كاسم ضمن الاستخدام الظاهر.</p>
+                  <p class="lang-en">No major conflict appears in the visible usage reviewed so far.</p>
+                </div>
+                <div class="info-block">
+                  <h4 class="lang-ar">علاقته بالنظام</h4>
+                  <h4 class="lang-en">Relevance to the system</h4>
+                  <p class="lang-ar">يرتبط بالنظام من زاوية واحدة فقط تقريبًا، وهي نهاية رحلة النفايات: التخلص أو المصير النهائي. لكن النظام أوسع من ذلك بكثير.</p>
+                  <p class="lang-en">It relates to the system from only one angle, the end of the waste journey, meaning disposal or final destination. The system itself is much broader than that.</p>
+                </div>
+                <div class="info-block">
+                  <h4 class="lang-ar">كيف يعكس مفهوم النظام</h4>
+                  <h4 class="lang-en">How it reflects the system concept</h4>
+                  <p class="lang-ar">يعكس النهاية، والإزالة، والمصير النهائي للنفايات. ولا يعكس بشكل كافٍ التوثيق، والربط، والتتبع، والرصد، وحركة الشاحنات، ودورة الرحلة كاملة.</p>
+                  <p class="lang-en">It reflects the ending, removal, and the final fate of waste. It does not adequately reflect documentation, linking, tracking, monitoring, truck movement, or the full journey lifecycle.</p>
+                </div>
+                <div class="info-block">
+                  <h4 class="lang-ar">فلسفة الاسم</h4>
+                  <h4 class="lang-en">Name philosophy</h4>
+                  <p class="lang-ar">فلسفته مرتبطة بالمرحلة الأخيرة من إدارة النفايات، لا بالمنظومة الرقمية الكاملة.</p>
+                  <p class="lang-en">Its philosophy is tied to the final stage of waste management, not to the full digital platform.</p>
+                </div>
+                <div class="info-block">
+                  <h4 class="lang-ar">الجذر والبعد اللغوي والتاريخي</h4>
+                  <h4 class="lang-en">Linguistic root and historical depth</h4>
+                  <p class="lang-ar">اسم واضح ومباشر، لكنه ثقيل نسبيًا في الذهن، ودلالته عملية وخشنة، وليست براندية غالبًا.</p>
+                  <p class="lang-en">It is a clear and direct word, but it feels somewhat heavy and rough. It does not naturally sound brand-friendly.</p>
+                </div>
+                <div class="info-block">
+                  <h4 class="lang-ar">أمثلة استعمال حيّة</h4>
+                  <h4 class="lang-en">Real usage examples</h4>
+                  <div class="mini-list">
+                    <span class="lang-ar">تم تسجيل عملية التخلّص.</span>
+                    <span class="lang-ar">التخلّص النهائي عبر النظام.</span>
+                    <span class="lang-ar">اعتمد موقع التخلّص.</span>
+                    <span class="lang-en">The disposal process was recorded.</span>
+                    <span class="lang-en">Final disposal through the system.</span>
+                    <span class="lang-en">Approve the disposal site.</span>
+                  </div>
+                </div>
+                <div class="info-block">
+                  <h4 class="lang-ar">مدى اتساقه مع دليل موان</h4>
+                  <h4 class="lang-en">How well it aligns with the MWAN brand guide</h4>
+                  <p class="lang-ar">يتسق جزئيًا مع المهنية، والصلة بالنفايات. لكنه أضعف في الابتكار، والشفافية الرقمية، والشمول، والحضور البراندي، والتوازن والاحترافية اللغوية.</p>
+                  <p class="lang-en">It aligns in part with professionalism and relevance to waste. It is weaker in innovation, digital transparency, completeness, brand presence, and linguistic balance and polish.</p>
+                </div>
+                <div class="info-block">
+                  <h4 class="lang-ar">ملاحظات إضافية</h4>
+                  <h4 class="lang-en">Additional notes</h4>
+                  <p class="lang-ar">قد يخدم اسم مرحلة أو وحدة أو إجراء داخل النظام، لكنه يحتاج فحصًا دقيقًا إذا أريد له أن يكون اسمًا للمنظومة نفسها.</p>
+                  <p class="lang-en">It may work for a phase, a module, or a process inside the system, but it would need closer review if used as the name of the system itself.</p>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <div class="cta-box">
+            <div>
+              <h2 class="lang-ar">كيف يمكن استخدام هذه الصفحة داخل العرض التنفيذي</h2>
+              <h2 class="lang-en">How this page can support an executive review</h2>
+              <p class="lang-ar">
+                يمكن استخدام الصفحة كنقطة انطلاق لاجتماع مراجعة داخلي، أو كمسودة عرض على فريق إدارة العلامة التجارية، أو كصفحة هبوط مؤقتة لمقارنة الاتجاهات قبل الانتقال إلى ترشيح نهائي قصير.
+              </p>
+              <p class="lang-en">
+                This page can work as a starting point for an internal review meeting, a draft for the brand management team, or a temporary landing page that compares naming directions before narrowing the list further.
+              </p>
+            </div>
+            <div class="cta-list">
+              <span class="lang-ar">تجهيز نسخة مختصرة للإدارة العليا</span>
+              <span class="lang-ar">تحويل الأسماء إلى مقارنة نهائية من 3 إلى 5 خيارات</span>
+              <span class="lang-ar">إضافة هوية بصرية أولية للاسمين الأقوى</span>
+
+              <span class="lang-en">Prepare a shorter version for leadership review</span>
+              <span class="lang-en">Narrow the set into a final 3 to 5 name comparison</span>
+              <span class="lang-en">Add early visual identity directions for the strongest options</span>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-grid">
+          <span class="lang-ar">تصميم صفحة هبوط تجريبية لعرض الأسماء المقترحة تحت مظلة موان</span>
+          <span class="lang-en">Experimental landing page for presenting naming directions under MWAN</span>
+          <span>mwan.gov.sa</span>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    const body = document.body;
+    const languageButtons = document.querySelectorAll("[data-lang-switch]");
+    const filterButtons = document.querySelectorAll("[data-filter]");
+    const cards = document.querySelectorAll(".name-card");
+
+    languageButtons.forEach((button) => {
+      button.addEventListener("click", () => {
+        const lang = button.getAttribute("data-lang-switch");
+        body.setAttribute("data-lang", lang);
+        document.documentElement.lang = lang;
+        document.documentElement.dir = lang === "ar" ? "rtl" : "ltr";
+
+        languageButtons.forEach((btn) => btn.classList.toggle("active", btn === button));
+      });
+    });
+
+    filterButtons.forEach((button) => {
+      button.addEventListener("click", () => {
+        const target = button.getAttribute("data-filter");
+        filterButtons.forEach((btn) => btn.classList.toggle("active", btn === button));
+
+        cards.forEach((card) => {
+          const group = card.getAttribute("data-group");
+          const visible = target === "all" || group.includes(target);
+          card.style.display = visible ? "" : "none";
+        });
+      });
+    });
+  </script>
+</body>
+</html>
